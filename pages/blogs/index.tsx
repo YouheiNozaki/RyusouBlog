@@ -28,7 +28,7 @@ const BlogsPage: NextPage<Props> = ({ posts }) => {
                 <span>{tag.name}</span>
               </React.Fragment>
             ))}
-            <div>{post.image.url}</div>
+            <img src={post.image.url} alt="ブログのイメージ画像です" />
           </React.Fragment>
         ))}
       </div>
@@ -38,7 +38,7 @@ const BlogsPage: NextPage<Props> = ({ posts }) => {
 
 BlogsPage.getInitialProps = async () => {
   const key = {
-    headers: { 'X-API-KEY': process.env.api_key },
+    headers: { 'X-API-KEY': '' },
   };
   const res = await axios.get(
     `https://ryusou-mtkh.microcms.io/api/v1/posts/`,
