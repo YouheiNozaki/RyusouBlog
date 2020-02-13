@@ -21,7 +21,7 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/about": [
+    "/blogs": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],

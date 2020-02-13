@@ -1,17 +1,13 @@
 import * as React from 'react';
-import Link from 'next/link';
 import { NextPage } from 'next';
+
+import Layout from '../components/Layout';
 
 const IndexPage: NextPage = () => {
   return (
-    <>
-      <h1>Hello Next.js</h1>
-      <p>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </p>
-    </>
+    <Layout>
+      <h1>Welcome to Ryusou's blog</h1>
+    </Layout>
   );
 };
 
