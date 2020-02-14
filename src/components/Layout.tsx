@@ -18,7 +18,7 @@ const Layout: React.FC<Props> = ({ children, title = 'Ryusou Blog' }) => (
         <Link href="/">
           <a>HOME</a>
         </Link>
-        <Link href="/blogs">
+        <Link href="/posts">
           <a>BLOG</a>
         </Link>
         <Link href="/info">

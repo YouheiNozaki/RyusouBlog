@@ -5,13 +5,13 @@ import axios from 'axios';
 
 import Layout from '../../components/Layout';
 
-import { Post } from '../../interfaces';
+import { IPost } from '../../interfaces';
 
 type Props = {
-  posts: Post[];
+  posts: IPost[];
 };
 
-const BlogsPage: NextPage<Props> = ({ posts }) => {
+const PostsPage: NextPage<Props> = ({ posts }) => {
   return (
     <Layout>
       <h2>BLOG 一覧</h2>
@@ -36,7 +36,7 @@ const BlogsPage: NextPage<Props> = ({ posts }) => {
   );
 };
 
-BlogsPage.getInitialProps = async () => {
+PostsPage.getInitialProps = async () => {
   const key = {
     headers: { 'X-API-KEY': process.env.api_key },
   };
@@ -44,8 +44,8 @@ BlogsPage.getInitialProps = async () => {
     `https://ryusou-mtkh.microcms.io/api/v1/posts/`,
     key,
   );
-  const data: Post[] = await res.data.contents;
+  const data: IPost[] = await res.data.contents;
   return { posts: data };
 };
 
-export default BlogsPage;
+export default PostsPage;

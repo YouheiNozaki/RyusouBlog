@@ -1,4 +1,4 @@
-export type Post = {
+export type IPost = {
   id: string;
   title: string;
   tags: [
@@ -7,7 +7,7 @@ export type Post = {
       name: string;
     },
   ];
-  day: Date;
+  day?: Date;
   image: {
     url: string;
   };
