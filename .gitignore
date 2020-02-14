@@ -1,4 +1,4 @@
 node_modules/
 .env
-.next
-.next-env.d.ts
+.next/
+next-env.d.ts

@@ -38,7 +38,7 @@ const BlogsPage: NextPage<Props> = ({ posts }) => {
 
 BlogsPage.getInitialProps = async () => {
   const key = {
-    headers: { 'X-API-KEY': '' },
+    headers: { 'X-API-KEY': process.env.api_key },
   };
   const res = await axios.get(
     `https://ryusou-mtkh.microcms.io/api/v1/posts/`,
