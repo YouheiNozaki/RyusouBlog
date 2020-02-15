@@ -1,17 +1,11 @@
 import * as React from 'react';
 import { NextPage } from 'next';
-import axios from 'axios';
-// import MarkdownIt from 'markdown-it';
-
+import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
 
 type Props = {
   post: IPost;
 };
-
-// const md = new MarkdownIt({
-//   html: true,
-// });
 
 const PostContent: NextPage<Props> = ({ post }) => {
   return (
@@ -32,14 +26,9 @@ const PostContent: NextPage<Props> = ({ post }) => {
 
 PostContent.getInitialProps = async context => {
   const { id } = context.query;
-  console.log(id);
-  const key = {
-    headers: { 'X-API-KEY': process.env.api_key },
-  };
 
-  const res = await axios.get(
+  const res = await axiosInstance.get(
     `https://ryusou-mtkh.microcms.io/api/v1/posts/${id}`,
-    key,
   );
 
   const post: IPost = await res.data;

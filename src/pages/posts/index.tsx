@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { NextPage } from 'next';
 import Link from 'next/link';
-import axios from 'axios';
 
 import Layout from '../../components/Layout';
-
+import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
 
 type Props = {
@@ -37,12 +36,11 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
 };
 
 PostsPage.getInitialProps = async () => {
-  const key = {
-    headers: { 'X-API-KEY': process.env.api_key },
-  };
-  const res = await axios.get(
+  // const key = {
+  //   headers: { 'X-API-KEY': process.env.api_key },
+  // };
+  const res = await axiosInstance.get(
     `https://ryusou-mtkh.microcms.io/api/v1/posts/`,
-    key,
   );
   const data: IPost[] = await res.data.contents;
   return { posts: data };
