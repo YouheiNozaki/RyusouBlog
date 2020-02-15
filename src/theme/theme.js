@@ -1,3 +1,4 @@
+import icons from './IconPaths';
 import colors from './colors';
 import sizes, { baseSizes } from './sizes';
 import typography from './typography';
@@ -84,6 +85,7 @@ const theme = {
   sizes,
   shadows,
   space,
+  icons,
 };
 
 export default theme;
