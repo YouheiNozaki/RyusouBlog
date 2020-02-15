@@ -1,6 +1,7 @@
 import * as React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
+import Nav from './Nav';
+import Header from './Header';
 
 type Props = {
   title?: string;
@@ -13,22 +14,8 @@ const Layout: React.FC<Props> = ({ children, title = 'Ryusou Blog' }) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>HOME</a>
-        </Link>
-        <Link href="/posts">
-          <a>BLOG</a>
-        </Link>
-        <Link href="/info">
-          <a>INFO</a>
-        </Link>
-        <Link href="/contact">
-          <a>CONTACT</a>
-        </Link>
-      </nav>
-    </header>
+    <Header />
+    <Nav />
     {children}
     <footer>
       <div>

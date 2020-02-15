@@ -3,13 +3,15 @@ import { NextPage } from 'next';
 import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
 
+import Layout from '../../components/Layout';
+
 type Props = {
   post: IPost;
 };
 
 const PostContent: NextPage<Props> = ({ post }) => {
   return (
-    <div>
+    <Layout>
       <h1>{post.title}</h1>
       <div>
         {post.tags.map(tag => (
@@ -20,7 +22,7 @@ const PostContent: NextPage<Props> = ({ post }) => {
       </div>
       <img src={post.image.url} />
       <div dangerouslySetInnerHTML={{ __html: `${post.content}` }}></div>
-    </div>
+    </Layout>
   );
 };
 
