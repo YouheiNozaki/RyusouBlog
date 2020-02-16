@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
+import { withTheme } from 'emotion-theming';
 
 const Nav: React.FC = () => (
   <nav>
@@ -18,4 +19,4 @@ const Nav: React.FC = () => (
   </nav>
 );
 
-export default Nav;
+export default withTheme(Nav);

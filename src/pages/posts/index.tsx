@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NextPage } from 'next';
 import Link from 'next/link';
+import { withTheme } from 'emotion-theming';
 
 import Layout from '../../components/Layout';
 import { axiosInstance } from '../../lib/api';
@@ -46,4 +47,4 @@ PostsPage.getInitialProps = async () => {
   return { posts: data };
 };
 
-export default PostsPage;
+export default withTheme(PostsPage);

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { NextPage } from 'next';
+import { withTheme } from 'emotion-theming';
 
 import Layout from '../components/Layout';
 
@@ -11,4 +12,4 @@ const IndexPage: NextPage = () => {
   );
 };
 
-export default IndexPage;
+export default withTheme(IndexPage);

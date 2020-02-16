@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { withTheme } from 'emotion-theming';
 
 import Layout from '../components/Layout';
 
@@ -8,4 +9,4 @@ const ContactPage: React.FC = () => (
   </Layout>
 );
 
-export default ContactPage;
+export default withTheme(ContactPage);

@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { withTheme } from 'emotion-theming';
 import Head from 'next/head';
 import Nav from './Nav';
 import Header from './Header';
+import { Container } from './Container';
 
 type Props = {
   title?: string;
@@ -9,22 +11,24 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children, title = 'Ryusou Blog' }) => (
   <>
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <Header />
-    <Nav />
-    {children}
-    <footer>
-      <div>
-        <p>
-          <small>&copy; 2020 Ryusou</small>
-        </p>
-      </div>
-    </footer>
+    <Container>
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Header />
+      <Nav />
+      {children}
+      <footer>
+        <div>
+          <p>
+            <small>&copy; 2020 Ryusou</small>
+          </p>
+        </div>
+      </footer>
+    </Container>
   </>
 );
 
-export default Layout;
+export default withTheme(Layout);

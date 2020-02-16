@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { NextPage } from 'next';
+import { withTheme } from 'emotion-theming';
+
 import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
 
@@ -38,4 +40,4 @@ PostContent.getInitialProps = async context => {
   return { post };
 };
 
-export default PostContent;
+export default withTheme(PostContent);
