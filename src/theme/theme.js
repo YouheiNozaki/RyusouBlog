@@ -17,12 +17,12 @@ const shadows = {
   none: 'none',
 };
 
-const breakpoints = {
-  sm: '30em',
-  md: '48em',
-  lg: '62em',
-  xl: '80em',
-};
+const breakpoints = ['30em', '48em', '62em', '80em'];
+// aliases
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
 
 const zIndices = {
   hide: -1,
