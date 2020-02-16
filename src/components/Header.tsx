@@ -2,7 +2,6 @@ import * as React from 'react';
 import { withTheme } from 'emotion-theming';
 import { Flex, Image, Heading } from '@chakra-ui/core';
 
-import {} from '../theme';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 
 const Header: React.FC = () => (
@@ -21,8 +20,14 @@ const Header: React.FC = () => (
         src="/logo.png"
         alt="りゅーそうブログのロゴ"
       />
-      <Heading as="h1" size="lg" marginLeft="2">
-        RyuSou Blog
+      <Heading
+        as="h1"
+        size="lg"
+        marginLeft="2"
+        fontFamily="fonts.header"
+        letterSpacing="tight"
+      >
+        RYUSOU BLOG
       </Heading>
       <DarkModeSwitch />
     </Flex>

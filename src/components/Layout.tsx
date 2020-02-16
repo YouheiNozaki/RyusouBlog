@@ -3,6 +3,7 @@ import { withTheme } from 'emotion-theming';
 import Head from 'next/head';
 import Nav from './Nav';
 import Header from './Header';
+import Footer from './Footer';
 import { Container } from './Container';
 
 type Props = {
@@ -20,13 +21,7 @@ const Layout: React.FC<Props> = ({ children, title = 'Ryusou Blog' }) => (
       <Header />
       <Nav />
       {children}
-      <footer>
-        <div>
-          <p>
-            <small>&copy; 2020 Ryusou</small>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </Container>
   </>
 );

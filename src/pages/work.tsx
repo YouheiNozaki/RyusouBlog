@@ -3,10 +3,10 @@ import { withTheme } from 'emotion-theming';
 
 import Layout from '../components/Layout';
 
-const InfoPage: React.FC = () => (
+const WorkPage: React.FC = () => (
   <Layout>
-    <h1>Info</h1>
+    <h1>WORK</h1>
   </Layout>
 );
 
-export default withTheme(InfoPage);
+export default withTheme(WorkPage);

@@ -10,6 +10,7 @@ export const Container: React.FC = props => {
   return (
     <Flex
       direction="column"
+      justifyContent="flex-start"
       bg={bgColor[colorMode]}
       color={color[colorMode]}
       {...props}
