@@ -22,7 +22,6 @@ const Layout: React.FC<Props> = ({ children, title = 'Ryusou Blog' }) => (
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header />
-      <Hero />
       <Flex
         direction="column"
         justifyContent="flex-start"
@@ -31,6 +30,7 @@ const Layout: React.FC<Props> = ({ children, title = 'Ryusou Blog' }) => (
         letterSpacing="letterSpacings.wider"
         lineHeight="lineHeights.taller"
       >
+        <Hero />
         <Nav />
         {children}
         <Footer />

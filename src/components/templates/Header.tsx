@@ -11,7 +11,7 @@ const Header: React.FC = () => (
       margin="3"
       paddingBottom="2"
       borderBottom="1px"
-      borderBottomColor="teal.100"
+      borderBottomColor="gray.200"
     >
       <Image
         rounded="full"
@@ -20,13 +20,7 @@ const Header: React.FC = () => (
         src="/logo.png"
         alt="りゅーそうブログのロゴ"
       />
-      <Heading
-        as="h1"
-        size="lg"
-        marginLeft="2"
-        fontFamily="fonts.header"
-        letterSpacing="tight"
-      >
+      <Heading as="h1" size="lg" marginLeft="2" letterSpacing="tight">
         RYUSOU BLOG
       </Heading>
       <DarkModeSwitch />
