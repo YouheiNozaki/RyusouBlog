@@ -5,18 +5,31 @@ import { Grid, Link as ChakraLink } from '@chakra-ui/core';
 
 const Nav: React.FC = () => (
   <nav>
-    <Grid templateColumns="repeat(4, 1fr)" gap={4} textAlign="center">
+    <Grid
+      templateColumns="repeat(4, 1fr)"
+      gap={4}
+      margin="2"
+      textAlign="center"
+    >
       <Link href="/">
-        <ChakraLink href="/">HOME</ChakraLink>
+        <ChakraLink href="/" fontSize="xl" fontWeight="bold">
+          HOME
+        </ChakraLink>
       </Link>
       <Link href="/posts">
-        <ChakraLink href="/posts">BLOG</ChakraLink>
+        <ChakraLink href="/posts" fontSize="xl" fontWeight="bold">
+          BLOG
+        </ChakraLink>
       </Link>
       <Link href="/work">
-        <ChakraLink href="/work">WORK</ChakraLink>
+        <ChakraLink href="/work" fontSize="xl" fontWeight="bold">
+          WORK
+        </ChakraLink>
       </Link>
       <Link href="/contact">
-        <ChakraLink href="/contact">CONTACT</ChakraLink>
+        <ChakraLink href="/contact" fontSize="xl" fontWeight="bold">
+          CONTACT
+        </ChakraLink>
       </Link>
     </Grid>
   </nav>
