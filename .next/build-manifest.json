@@ -29,7 +29,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/work": [
+    "/posts": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/posts/[id]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
