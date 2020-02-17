@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { withTheme } from 'emotion-theming';
 
-import Layout from '../../components/Layout';
+import Layout from '../../components/templates/Layout';
 import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
 

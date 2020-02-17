@@ -5,7 +5,7 @@ import { withTheme } from 'emotion-theming';
 import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
 
-import Layout from '../../components/Layout';
+import Layout from '../../components/templates/Layout';
 
 type Props = {
   post: IPost;

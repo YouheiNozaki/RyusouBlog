@@ -4,7 +4,7 @@ import { Flex } from '@chakra-ui/core';
 
 import Head from 'next/head';
 import Nav from './Nav';
-import Hero from './Hero';
+import Hero from '../molecules/Hero';
 import Header from './Header';
 import Footer from './Footer';
 import { Container } from './Container';
@@ -22,14 +22,16 @@ const Layout: React.FC<Props> = ({ children, title = 'Ryusou Blog' }) => (
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header />
+      <Hero />
       <Flex
         direction="column"
         justifyContent="flex-start"
         margin="0 auto"
         maxWidth="containers.md"
+        letterSpacing="letterSpacings.wider"
+        lineHeight="lineHeights.taller"
       >
         <Nav />
-        <Hero />
         {children}
         <Footer />
       </Flex>

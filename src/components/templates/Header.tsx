@@ -2,7 +2,7 @@ import * as React from 'react';
 import { withTheme } from 'emotion-theming';
 import { Flex, Image, Heading } from '@chakra-ui/core';
 
-import { DarkModeSwitch } from '../components/DarkModeSwitch';
+import { DarkModeSwitch } from '../molecules/DarkModeSwitch';
 
 const Header: React.FC = () => (
   <header>

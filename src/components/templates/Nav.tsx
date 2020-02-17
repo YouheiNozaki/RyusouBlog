@@ -7,8 +7,9 @@ const Nav: React.FC = () => (
   <nav>
     <Grid
       templateColumns="repeat(4, 1fr)"
-      gap={4}
-      margin="2"
+      gap={8}
+      margin="5"
+      padding="10"
       textAlign="center"
     >
       <Link href="/">
