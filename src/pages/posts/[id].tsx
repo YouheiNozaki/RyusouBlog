@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NextPage } from 'next';
 import { withTheme } from 'emotion-theming';
-import { Heading, Tag, Image, Text } from '@chakra-ui/core';
+import { Heading, Tag, Image, Flex } from '@chakra-ui/core';
 
 import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
@@ -24,12 +24,9 @@ const PostContent: NextPage<Props> = ({ post }) => {
         ))}
       </div>
       <Image src={post.image.url} rounded="lg" marginBottom="20" />
-      <Text
-        dangerouslySetInnerHTML={{ __html: `${post.content}` }}
-        margin="6"
-        letterSpacing="letterSpacings.tight"
-        lineHeight="lineHeights.taller"
-      ></Text>
+      <Flex margin="6">
+        <div dangerouslySetInnerHTML={{ __html: `${post.content}` }}></div>
+      </Flex>
     </Layout>
   );
 };
