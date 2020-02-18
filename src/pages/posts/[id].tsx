@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NextPage } from 'next';
 import { withTheme } from 'emotion-theming';
+import { Heading, Tag, Image, Text } from '@chakra-ui/core';
 
 import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
@@ -14,16 +15,21 @@ type Props = {
 const PostContent: NextPage<Props> = ({ post }) => {
   return (
     <Layout>
-      <h1>{post.title}</h1>
+      <Heading>{post.title}</Heading>
       <div>
         {post.tags.map(tag => (
           <React.Fragment key={tag.id}>
-            <span>{tag.name}</span>
+            <Tag margin="4">{tag.name}</Tag>
           </React.Fragment>
         ))}
       </div>
-      <img src={post.image.url} />
-      <div dangerouslySetInnerHTML={{ __html: `${post.content}` }}></div>
+      <Image src={post.image.url} rounded="lg" marginBottom="20" />
+      <Text
+        dangerouslySetInnerHTML={{ __html: `${post.content}` }}
+        margin="6"
+        letterSpacing="letterSpacings.tight"
+        lineHeight="lineHeights.taller"
+      ></Text>
     </Layout>
   );
 };
