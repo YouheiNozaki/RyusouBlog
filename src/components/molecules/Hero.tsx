@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { withTheme } from 'emotion-theming';
-import { Image } from '@chakra-ui/core';
+import { Image, Flex } from '@chakra-ui/core';
 
 const Hero: React.FC = () => (
-  <>
-    <Image src="./hero.png" />
-  </>
+  <Flex backgroundColor="white">
+    <Image src="./hero.png" margin="0 auto" />
+  </Flex>
 );
-
 export default withTheme(Hero);

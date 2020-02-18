@@ -11,6 +11,10 @@ export const Container: React.FC = props => {
     <Flex
       direction="column"
       justifyContent="flex-start"
+      paddingTop="16"
+      paddingBottom="20"
+      position="relative"
+      z-index="2"
       bg={bgColor[colorMode]}
       color={color[colorMode]}
       {...props}

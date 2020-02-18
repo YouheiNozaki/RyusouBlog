@@ -9,8 +9,9 @@ const Footer: React.FC = () => (
       direction="column"
       alignItems="center"
       justifyContent="flex-start"
-      marginTop="6"
-      marginBottom="6"
+      paddingTop="6"
+      paddingBottom="6"
+      backgroundColor="gray.50"
     >
       <Heading as="h2" size="md" marginBottom="6">
         Follow me!

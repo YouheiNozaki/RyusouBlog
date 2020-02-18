@@ -28,14 +28,7 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
           <React.Fragment key={post.id}>
             <Link href={`posts/${post.id}`}>
               <ChakraLink href={`posts/${post.id}`}>
-                <Box
-                  p={4}
-                  maxW="sm"
-                  maxH="md"
-                  rounded="lg"
-                  borderWidth="2px"
-                  position="relative"
-                >
+                <Box p={4} maxW="sm" maxH="md" rounded="lg" borderWidth="2px">
                   <Heading
                     as="h5"
                     size="md"
