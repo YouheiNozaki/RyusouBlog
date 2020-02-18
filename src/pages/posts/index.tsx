@@ -2,7 +2,15 @@ import * as React from 'react';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { withTheme } from 'emotion-theming';
-import { Heading, Tag, Grid, Link as ChakraLink } from '@chakra-ui/core';
+import {
+  Heading,
+  Tag,
+  Link as ChakraLink,
+  Box,
+  Image,
+  Text,
+  Grid,
+} from '@chakra-ui/core';
 import Layout from '../../components/templates/Layout';
 import { axiosInstance } from '../../lib/api';
 import { IPost } from '../../interfaces';
@@ -14,28 +22,59 @@ type Props = {
 const PostsPage: NextPage<Props> = ({ posts }) => {
   return (
     <Layout>
-      <Heading margin="5">BLOG 一覧</Heading>
-      <div>
-        <Grid gridTemplateRows="">
-          {posts.map(post => (
-            <React.Fragment key={post.id}>
-              <Link href={`posts/${post.id}`}>
-                <ChakraLink href={`posts/${post.id}`}>
-                  <Heading as="h5" size="md" margin="2">
+      <Heading margin="5">Ryusou Tech Blog</Heading>
+      <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+        {posts.map(post => (
+          <React.Fragment key={post.id}>
+            <Link href={`posts/${post.id}`}>
+              <ChakraLink href={`posts/${post.id}`}>
+                <Box
+                  p={4}
+                  maxW="sm"
+                  maxH="md"
+                  rounded="lg"
+                  borderWidth="2px"
+                  position="relative"
+                >
+                  <Heading
+                    as="h5"
+                    size="md"
+                    margin={2}
+                    paddingBottom={2}
+                    fontWeight="bold"
+                  >
                     {post.title}
                   </Heading>
-                </ChakraLink>
-              </Link>
-              {post.tags.map(tag => (
-                <React.Fragment key={tag.id}>
-                  <Tag variantColor="teal">{tag.name}</Tag>
-                </React.Fragment>
-              ))}
-              <img src={post.image.url} alt="ブログのイメージ画像です" />
-            </React.Fragment>
-          ))}
-        </Grid>
-      </div>
+                  {post.tags.map(tag => (
+                    <React.Fragment key={tag.id}>
+                      <Tag
+                        variantColor="gray"
+                        position="absolute"
+                        color="gray.900"
+                      >
+                        {tag.name}
+                      </Tag>
+                    </React.Fragment>
+                  ))}
+                  <Image
+                    src={post.image.url}
+                    alt="ブログのイメージ画像です"
+                    rounded="lg"
+                  />
+                  <Text
+                    dangerouslySetInnerHTML={{ __html: `${post.content}` }}
+                    color="gray.500"
+                    isTruncated
+                    lineHeight="tight"
+                    maxHeight="24"
+                    margin={2}
+                  ></Text>
+                </Box>
+              </ChakraLink>
+            </Link>
+          </React.Fragment>
+        ))}
+      </Grid>
     </Layout>
   );
 };

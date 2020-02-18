@@ -6,8 +6,8 @@ export const DarkModeSwitch: React.FC = () => {
   const isDark = colorMode === 'dark';
   return (
     <Switch
-      position="fixed"
       right="5"
+      position="fixed"
       color="gray.100"
       isChecked={isDark}
       onChange={toggleColorMode}
