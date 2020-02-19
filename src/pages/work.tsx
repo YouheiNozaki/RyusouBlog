@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 import { withTheme } from 'emotion-theming';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import {
   Heading,
   Text,
@@ -17,8 +17,8 @@ import Layout from '../components/templates/Layout';
 
 const WorkPage: React.FC = () => (
   <Layout>
-    <Heading as="h1" size="xl" marginBottom="10">
-      Introduce Ryusou's Product and Speech
+    <Heading as="h1" size="xl" marginBottom="10" letterSpacing="tight">
+      Introduction products and speeches
     </Heading>
     <Tabs size="lg" variant="enclosed" variantColor="teal" isFitted>
       <TabList mb="10">

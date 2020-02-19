@@ -17,11 +17,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/posts/[id]": [
+    "/contact": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/work": [
+    "/success": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

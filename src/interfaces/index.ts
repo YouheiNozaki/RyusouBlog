@@ -13,3 +13,10 @@ export type IPost = {
   };
   content: string;
 };
+
+export type IFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  body: string;
+};
