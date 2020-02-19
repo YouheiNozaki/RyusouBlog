@@ -7,10 +7,10 @@ type Props = {
 };
 
 const TechBox: React.FC<Props> = props => (
-  <Box maxWidth="32" maxHeight="32" borderWidth="1px" bg="white" rounded="lg">
+  <Box width="32" height="32" borderWidth="1px" bg="white" rounded="lg">
     <Text
       color="black"
-      fontSize="xl"
+      fontSize={['sm', 'md', 'lg', 'xl']}
       fontWeight="bold"
       textAlign="center"
       margin="2"

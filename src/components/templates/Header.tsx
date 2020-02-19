@@ -9,21 +9,21 @@ const Header: React.FC = () => (
   <header>
     <Flex
       align="center"
-      padding="2"
+      padding={[2, 2, 4, 4]}
       borderBottom="1px"
       borderBottomColor="gray.50"
       backgroundColor="gray.50"
       position="fixed"
       top="0"
       left="0"
-      width="100%"
+      width="full"
       zIndex={1}
     >
       <Link href="/">
         <ChakraLink href="/">
           <Image
             rounded="full"
-            size="12"
+            size={12}
             objectFit="cover"
             src="/logo.png"
             alt="りゅーそうブログのロゴ"
@@ -33,7 +33,7 @@ const Header: React.FC = () => (
       <Heading
         as="h1"
         color="teal.900"
-        size="lg"
+        fontSize={'xl'}
         marginLeft="2"
         letterSpacing="tight"
       >

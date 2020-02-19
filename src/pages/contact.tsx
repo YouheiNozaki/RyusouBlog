@@ -88,7 +88,7 @@ const ContactPage: React.FC = () => {
             {errors.body && errors.body.message}
           </FormErrorMessage>
         </FormControl>
-        <Button type="submit" variantColor="teal">
+        <Button type="submit" variantColor="teal" marginLeft="6">
           Submit
         </Button>
       </form>

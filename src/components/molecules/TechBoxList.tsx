@@ -4,7 +4,17 @@ import { Grid } from '@chakra-ui/core';
 import TechBox from '../atom/Techbox';
 
 const TechBoxList: React.FC = () => (
-  <Grid templateColumns="repeat(5, 1fr)" gap={6} marginBottom={4}>
+  <Grid
+    templateColumns={{
+      base: 'repeat(2, 1fr)',
+      md: 'repeat(5, 1fr)',
+      lg: 'repeat(5, 1fr)',
+      xl: 'repeat(5, 1fr)',
+    }}
+    gap={[10, 6, 6, 6]}
+    marginLeft={[6, 0, 0, 0]}
+    marginBottom={6}
+  >
     <TechBox name="HTML5" url="html" />
     <TechBox name="CSS3" url="css" />
     <TechBox name="JavaScript" url="javascript" />

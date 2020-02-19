@@ -9,9 +9,22 @@ import TechBoxList from '../components/molecules/TechBoxList';
 const IndexPage: NextPage = () => {
   return (
     <Layout>
-      <Heading marginBottom="10">Welcome to Ryusou's blog!!</Heading>
-      <Flex>
-        <Text marginLeft="4">
+      <Heading
+        marginTop="4"
+        marginLeft="2"
+        marginRight="2"
+        marginBottom="10"
+        letterSpacing="tight"
+      >
+        Welcome to Ryusou's blog
+      </Heading>
+      <Flex display={{ md: 'flex' }}>
+        <Text
+          lineHeight="2"
+          marginLeft="4"
+          marginBottom="4"
+          fontSize={['sm', 'md', 'md', 'md']}
+        >
           りゅーそうの技術ブログへようこそ！
           <br />
           <br />
@@ -22,15 +35,18 @@ const IndexPage: NextPage = () => {
         <Image
           src="/ryusou.png"
           width="48"
-          marginRight="5"
-          marginLeft="5"
-          marginBottom="5"
+          marginTop={[5, 5, 0, 0]}
+          marginRight={[0, 5, 5, 5]}
+          marginLeft={[20, 20, 5, 5]}
+          marginBottom="10"
           rounded="full"
         />
       </Flex>
-      <Heading marginBottom="10">Ryusou's Tech Stack</Heading>
+      <Heading marginBottom="10" marginLeft="2">
+        Ryusou's Tech Stack
+      </Heading>
       <TechBoxList />
-      <Text fontSize="xl" fontWeight="bold">
+      <Text fontSize="xl" fontWeight="bold" marginLeft="4">
         and more...!!
       </Text>
     </Layout>

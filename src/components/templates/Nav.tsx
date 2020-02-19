@@ -7,28 +7,44 @@ const Nav: React.FC = () => (
   <nav>
     <Grid
       templateColumns="repeat(4, 1fr)"
-      gap={8}
-      margin="5"
-      padding="10"
+      gap={[2, 4, 6, 8]}
+      margin={[2, 4, 6, 8]}
+      padding={[4, 6, 8, 10]}
       textAlign="center"
     >
       <Link href="/">
-        <ChakraLink href="/" fontSize="xl" fontWeight="bold">
+        <ChakraLink
+          href="/"
+          fontSize={['sm', 'md', 'lg', 'xl']}
+          fontWeight="bold"
+        >
           HOME
         </ChakraLink>
       </Link>
       <Link href="/posts">
-        <ChakraLink href="/posts" fontSize="xl" fontWeight="bold">
+        <ChakraLink
+          href="/posts"
+          fontSize={['sm', 'md', 'lg', 'xl']}
+          fontWeight="bold"
+        >
           BLOG
         </ChakraLink>
       </Link>
       <Link href="/work">
-        <ChakraLink href="/work" fontSize="xl" fontWeight="bold">
+        <ChakraLink
+          href="/work"
+          fontSize={['sm', 'md', 'lg', 'xl']}
+          fontWeight="bold"
+        >
           WORK
         </ChakraLink>
       </Link>
       <Link href="/contact">
-        <ChakraLink href="/contact" fontSize="xl" fontWeight="bold">
+        <ChakraLink
+          href="/contact"
+          fontSize={['sm', 'md', 'lg', 'xl']}
+          fontWeight="bold"
+        >
           CONTACT
         </ChakraLink>
       </Link>
