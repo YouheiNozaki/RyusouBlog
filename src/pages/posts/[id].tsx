@@ -15,15 +15,24 @@ type Props = {
 const PostContent: NextPage<Props> = ({ post }) => {
   return (
     <Layout>
-      <Heading>{post.title}</Heading>
+      <Heading fontSize={{ sm: '3xl' }} margin={2} marginLeft={4}>
+        {post.title}
+      </Heading>
       <div>
         {post.tags.map(tag => (
           <React.Fragment key={tag.id}>
-            <Tag margin="4">{tag.name}</Tag>
+            <Tag marginLeft={6} marginTop={1} size={'sm'}>
+              {tag.name}
+            </Tag>
           </React.Fragment>
         ))}
       </div>
-      <Image src={post.image.url} rounded="lg" marginBottom="20" />
+      <Image
+        src={post.image.url}
+        rounded="lg"
+        margin={4}
+        marginBottom={[10, 20, 20, 20]}
+      />
       <Flex margin="6">
         <div dangerouslySetInnerHTML={{ __html: `${post.content}` }}></div>
       </Flex>

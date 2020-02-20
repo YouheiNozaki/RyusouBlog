@@ -23,12 +23,19 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
   return (
     <Layout>
       <Heading margin="5">Ryusou Tech Blog</Heading>
-      <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+      <Grid display={{ sm: 'grid' }} templateColumns="repeat(2, 1fr)" gap={4}>
         {posts.map(post => (
           <React.Fragment key={post.id}>
             <Link href={`posts/${post.id}`}>
               <ChakraLink href={`posts/${post.id}`}>
-                <Box p={4} maxW="sm" maxH="md" rounded="lg" borderWidth="2px">
+                <Box
+                  p={[2, 4, 4, 4]}
+                  width={['xs', 'sm', 'sm', 'sm']}
+                  maxHeight={'md'}
+                  rounded="lg"
+                  borderWidth="2px"
+                  margin={4}
+                >
                   <Heading
                     as="h5"
                     size="md"
