@@ -42,13 +42,10 @@ const PostContent: NextPage<Props> = ({ post }) => {
 
 PostContent.getInitialProps = async context => {
   const { id } = context.query;
-
   const res = await axiosInstance.get(
     `https://ryusou-mtkh.microcms.io/api/v1/posts/${id}`,
   );
-
   const post: IPost = await res.data;
-
   return { post };
 };
 
