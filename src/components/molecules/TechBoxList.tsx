@@ -12,7 +12,8 @@ const TechBoxList: React.FC = () => (
       xl: 'repeat(5, 1fr)',
     }}
     gap={[10, 6, 6, 6]}
-    marginLeft={[6, 0, 0, 0]}
+    marginLeft={[10, 0, 0, 0]}
+    marginRight={[10, 0, 0, 0]}
     marginBottom={6}
   >
     <TechBox name="HTML5" url="html" />

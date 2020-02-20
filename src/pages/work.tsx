@@ -17,7 +17,13 @@ import Layout from '../components/templates/Layout';
 
 const WorkPage: React.FC = () => (
   <Layout>
-    <Heading as="h1" size="xl" marginBottom="10" letterSpacing="tight">
+    <Heading
+      as="h1"
+      fontSize={['xl', '2xl', '3xl', '3xl']}
+      marginTop={'10'}
+      marginBottom="10"
+      letterSpacing="tight"
+    >
       Introduction products and speeches
     </Heading>
     <Tabs size="lg" variant="enclosed" variantColor="teal" isFitted>

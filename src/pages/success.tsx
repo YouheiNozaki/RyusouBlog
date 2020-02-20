@@ -7,14 +7,19 @@ import Layout from '../components/templates/Layout';
 const SuccessPage: React.FC = () => (
   <Layout>
     <Flex position="relative" margin="0 auto">
-      <Image src="/hukidashi.png" width="64" height="64" position="absolute" />
+      <Image
+        src="/hukidashi.png"
+        width={[56, 56, 56, 56]}
+        height={[64, 64, 64, 64]}
+        position="absolute"
+      />
       <Image
         src="/ryusou2.png"
-        width="56"
-        height="60"
+        width={[48, 48, 48, 48]}
+        height={[64, 64, 64, 64]}
         position="relative"
-        left="32"
-        top="16"
+        left="24"
+        top="24"
       />
     </Flex>
   </Layout>
