@@ -13,6 +13,8 @@ const HeadComponent: React.FC<IHead> = ({
   return (
     <Head>
       <title>{title}</title>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta name="keywords" content={keyword} />
