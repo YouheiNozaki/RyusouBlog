@@ -11,6 +11,8 @@ import { Container } from './Container';
 const Layout: React.FC = ({ children = 'Ryusou Blog' }) => (
   <>
     <Container>
+      <Header />
+      <Hero />
       <Flex
         direction="column"
         justifyContent="flex-start"
@@ -19,8 +21,6 @@ const Layout: React.FC = ({ children = 'Ryusou Blog' }) => (
         letterSpacing="letterSpacings.wider"
         lineHeight="lineHeights.taller"
       >
-        <Header />
-        <Hero />
         <Nav />
         {children}
       </Flex>

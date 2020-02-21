@@ -120,32 +120,32 @@ const App = ({
   Component,
   pageProps
 }) => {
-  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["ThemeProvider"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["ThemeProvider"], {
     theme: _theme__WEBPACK_IMPORTED_MODULE_2__["default"],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: undefined
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["CSSReset"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     },
     __self: undefined
-  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["ColorModeProvider"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["CSSReset"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: undefined
-  }, __jsx(Component, _extends({}, pageProps, {
+  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["ColorModeProvider"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: undefined
-  }))));
+  }, __jsx(Component, _extends({}, pageProps, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);

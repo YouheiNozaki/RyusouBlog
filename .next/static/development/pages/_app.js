@@ -40803,32 +40803,32 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 var App = function App(_ref) {
   var Component = _ref.Component,
       pageProps = _ref.pageProps;
-  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
     theme: _theme__WEBPACK_IMPORTED_MODULE_3__["default"],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["CSSReset"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
     },
     __self: this
-  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ColorModeProvider"], {
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["CSSReset"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11
     },
     __self: this
-  }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ColorModeProvider"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: this
-  }))));
+  }, __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
