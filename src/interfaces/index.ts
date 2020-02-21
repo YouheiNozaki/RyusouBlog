@@ -1,3 +1,11 @@
+export type IHead = {
+  title: string;
+  description: string;
+  keyword: string;
+  image: string;
+  url: string;
+};
+
 export type IPost = {
   id: string;
   title: string;

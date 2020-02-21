@@ -6,12 +6,14 @@ import theme from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ThemeProvider theme={theme}>
-      <CSSReset />
-      <ColorModeProvider>
-        <Component {...pageProps} />
-      </ColorModeProvider>
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={theme}>
+        <CSSReset />
+        <ColorModeProvider>
+          <Component {...pageProps} />
+        </ColorModeProvider>
+      </ThemeProvider>
+    </>
   );
 };
 
