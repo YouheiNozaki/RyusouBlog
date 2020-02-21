@@ -4,12 +4,7 @@ import { Image, Flex } from '@chakra-ui/core';
 
 const Hero: React.FC = () => (
   <Flex backgroundColor="white">
-    <Image
-      src="./hero.png"
-      margin={{ sm: '0 auto' }}
-      width={'100vw'}
-      height={'auto'}
-    />
+    <Image src="./hero.png" margin={{ sm: '0 auto' }} />
   </Flex>
 );
 export default withTheme(Hero);
