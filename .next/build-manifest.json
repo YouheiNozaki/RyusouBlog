@@ -1,6 +1,10 @@
 {
-  "devFiles": [],
+  "devFiles": [
+    "static/development/dll/dll_d6a88dbe3071bd165157.js",
+    "static/development/dll/dll_d6a88dbe3071bd165157.js.map"
+  ],
   "pages": {
+<<<<<<< HEAD
     "/": [
       "static/runtime/webpack-91b117697e716c22a78b.js",
       "static/chunks/framework.94bc9fd9a7de53a90996.js",
@@ -88,6 +92,24 @@
       "static/chunks/e9dc1c3e35502de6c4893b58aeeb64781d312b90.1b922b1753fe0146b450.js",
       "static/chunks/858b3af405364df5945d65752c2ced2dd35f4477.2ed3d1bc426ab501b093.js",
       "static/runtime/main-89b72cdbcddfa08b3728.js"
+=======
+    "/_app": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js",
+      "static/development/_buildManifest.js"
+    ],
+    "/_error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/_polyfills": [
+      "static/runtime/polyfills.js",
+      "static/runtime/polyfills.js.map"
+    ],
+    "/posts/[id]": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+>>>>>>> topic
     ]
   }
 }
