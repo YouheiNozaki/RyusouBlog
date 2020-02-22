@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"/_app":"static/t5G2zcrbRCQdPvmGAV3fg/pages/_app.js","/_document":"static/t5G2zcrbRCQdPvmGAV3fg/pages/_document.js","/_error":"static/t5G2zcrbRCQdPvmGAV3fg/pages/_error.js","/contact":"static/t5G2zcrbRCQdPvmGAV3fg/pages/contact.html","/index":"static/t5G2zcrbRCQdPvmGAV3fg/pages/index.html","/posts":"static/t5G2zcrbRCQdPvmGAV3fg/pages/posts.js","/posts/[id]":"static/t5G2zcrbRCQdPvmGAV3fg/pages/posts/[id].js","/success":"static/t5G2zcrbRCQdPvmGAV3fg/pages/success.html","/work":"static/t5G2zcrbRCQdPvmGAV3fg/pages/work.html","/":"static/t5G2zcrbRCQdPvmGAV3fg/pages/index.html","/_errors/404":"static/t5G2zcrbRCQdPvmGAV3fg/pages/_errors/404.html"}
-=======
-{"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/posts/[id]":"static/development/pages/posts/[id].js"}
->>>>>>> topic
+{"/_app":"static/development/pages/_app.js","/_document":"static/development/pages/_document.js","/_error":"static/development/pages/_error.js","/index":"static/development/pages/index.js","/next/dist/pages/_error":"static/development/pages/next/dist/pages/_error.js","/posts":"static/development/pages/posts.js","/posts/[id]":"static/development/pages/posts/[id].js","/":"static/development/pages/index.js"}
