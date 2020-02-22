@@ -56,7 +56,7 @@ const PostContent: NextPage<Props> = ({ post }) => {
         <Box margin={2}>
         <FacebookShareButton
           quote={post.title}
-          url={`https://ryusou-mtkh.now.sh/posts/${post.id}`}
+          url={`https://ryusou-blog.now.sh/posts/${post.id}`}
         >
           <FacebookIcon size={32} round />
         </FacebookShareButton>
@@ -64,7 +64,7 @@ const PostContent: NextPage<Props> = ({ post }) => {
         <Box margin={2}>
         <LineShareButton
           title={post.title}
-          url={`https://ryusou-mtkh.now.sh/posts/${post.id}`}
+          url={`https://ryusou-blog.now.sh/posts/${post.id}`}
         >
           <LineIcon size={32} round />
         </LineShareButton>
