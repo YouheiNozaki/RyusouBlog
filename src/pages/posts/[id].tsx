@@ -53,9 +53,6 @@ const PostContent: NextPage<Props> = ({ post }) => {
         <Flex margin="6">
           <div dangerouslySetInnerHTML={{ __html: `${post.content}` }}></div>
         </Flex>
-        <Flex margin="6">
-          <div dangerouslySetInnerHTML={{ __html: `${post.content}` }}></div>
-        </Flex>
         <Flex
           margin={6}
           justify-content={'right'}
