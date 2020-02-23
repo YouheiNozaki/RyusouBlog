@@ -1,4 +1,4 @@
-export type IHead = {
+export type HeadType = {
   title: string;
   description: string;
   keyword: string;
@@ -6,7 +6,7 @@ export type IHead = {
   url: string;
 };
 
-export type IPost = {
+export type Post = {
   id: string;
   title: string;
   tags: [
@@ -22,7 +22,7 @@ export type IPost = {
   content: string;
 };
 
-export type IFormData = {
+export type FormData = {
   firstName: string;
   lastName: string;
   email: string;

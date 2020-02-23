@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Head from 'next/head';
 
-import { IHead } from '../../interfaces';
+import { HeadType } from '../../types';
 
-const HeadComponent: React.FC<IHead> = ({
+const HeadComponent: React.FC<HeadType> = ({
   title,
   description,
   keyword,

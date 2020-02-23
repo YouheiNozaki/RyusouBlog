@@ -17,14 +17,14 @@ import HeadComponent from '../components/templates/Head';
 import Layout from '../components/templates/Layout';
 
 import { axiosPostInstance } from '../lib/api';
-import { IFormData } from '../interfaces/';
+import { FormData } from '../types';
 
 const ContactPage: React.FC = () => {
   const router = useRouter();
 
-  const { register, handleSubmit, errors } = useForm<IFormData>();
+  const { register, handleSubmit, errors } = useForm<FormData>();
 
-  function onSubmit(values: IFormData) {
+  function onSubmit(values: FormData) {
     axiosPostInstance({
       data: values,
     })

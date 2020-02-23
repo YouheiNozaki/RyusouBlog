@@ -12,13 +12,13 @@ import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box } from '@chakra-ui/core';
 
 import { axiosInstance } from '../../lib/api';
-import { IPost } from '../../interfaces';
+import { Post } from '../../types';
 
 import Layout from '../../components/templates/Layout';
 import HeadComponent from '../../components/templates/Head';
 
 type Props = {
-  post: IPost;
+  post: Post;
 };
 
 const PostContent: NextPage<Props> = ({ post }) => {
@@ -26,7 +26,7 @@ const PostContent: NextPage<Props> = ({ post }) => {
     <>
       <HeadComponent
         title={post.title}
-        description={post.content}
+        description={post.title}
         keyword={post.title}
         image={post.image.url}
         url={`https://ryusou-blog.now.sh/posts/${post.id}`}
@@ -57,14 +57,23 @@ const PostContent: NextPage<Props> = ({ post }) => {
           margin={6}
           justify-content={'right'}
           position="fixed"
-          right={2}
+          left={2}
           bottom={2}
         >
           <Box margin={2}>
             <TwitterShareButton
               title={post.title}
+              via="ryusou_mtkh"
               url={`https://ryusou-mtkh.now.sh/posts/${post.id}`}
+              hashtags={['RyusouBlog']}
             >
+              <HeadComponent
+                title={post.title}
+                description={post.title}
+                keyword={post.title}
+                image={post.image.url}
+                url={`https://ryusou-blog.now.sh/posts/${post.id}`}
+              />
               <TwitterIcon size={32} round />
             </TwitterShareButton>
           </Box>
@@ -95,7 +104,7 @@ PostContent.getInitialProps = async context => {
   const res = await axiosInstance.get(
     `https://ryusou-mtkh.microcms.io/api/v1/posts/${id}`,
   );
-  const post: IPost = await res.data;
+  const post: Post = await res.data;
   return { post };
 };
 

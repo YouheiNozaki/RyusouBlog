@@ -15,10 +15,10 @@ import {
 import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
 import { axiosInstance } from '../../lib/api';
-import { IPost } from '../../interfaces';
+import { Post } from '../../types';
 
 type Props = {
-  posts: IPost[];
+  posts: Post[];
 };
 
 const PostsPage: NextPage<Props> = ({ posts }) => {
@@ -94,7 +94,7 @@ PostsPage.getInitialProps = async () => {
   const res = await axiosInstance.get(
     `https://ryusou-mtkh.microcms.io/api/v1/posts/`,
   );
-  const data: IPost[] = await res.data.contents;
+  const data: Post[] = await res.data.contents;
   return { posts: data };
 };
 
