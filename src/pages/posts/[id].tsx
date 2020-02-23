@@ -9,7 +9,8 @@ import {
   FacebookShareButton,
 } from 'react-share';
 import { withTheme } from 'emotion-theming';
-import { Heading, Tag, Image, Flex, Box } from '@chakra-ui/core';
+import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
+import Moment from 'react-moment';
 
 import { axiosInstance } from '../../lib/api';
 import { Post } from '../../types';
@@ -44,6 +45,9 @@ const PostContent: NextPage<Props> = ({ post }) => {
             </React.Fragment>
           ))}
         </div>
+        <Text as="i" marginLeft={6} marginTop={1} color="gray.600">
+          <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
+        </Text>
         <Image
           src={post.image.url}
           rounded="lg"

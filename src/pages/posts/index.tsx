@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { withTheme } from 'emotion-theming';
@@ -12,6 +12,7 @@ import {
   Grid,
 } from '@chakra-ui/core';
 
+import Moment from 'react-moment';
 import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
 import { axiosInstance } from '../../lib/api';
@@ -71,6 +72,9 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                       alt="ブログのイメージ画像です"
                       rounded="lg"
                     />
+                    <Text as="i" margin={4} color="gray.600">
+                      <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
+                    </Text>
                     <Text
                       dangerouslySetInnerHTML={{ __html: `${post.content}` }}
                       color="gray.500"
