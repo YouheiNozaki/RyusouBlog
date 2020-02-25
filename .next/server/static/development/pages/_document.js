@@ -1103,7 +1103,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this
     }), __jsx("link", {
       rel: "shortcut icon",
-      href: 'https://t-cr.jp/favicon.ico',
+      href: '/mainLogo.png',
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
@@ -1111,14 +1111,14 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this
     }), __jsx("link", {
       rel: "apple-touch-icon",
-      href: 'https://t-cr.jp/logo.png',
+      href: '/mainLogo.png',
       __source: {
         fileName: _jsxFileName,
         lineNumber: 14
       },
       __self: this
     }), __jsx("link", {
-      href: "/path/to/styles/a11y-dark.css",
+      href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css",
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
@@ -1128,19 +1128,19 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 20
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 21
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 22
       },
       __self: this
     })));

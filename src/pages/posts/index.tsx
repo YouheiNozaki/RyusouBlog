@@ -10,6 +10,7 @@ import {
   Image,
   Text,
   Grid,
+  Flex,
 } from '@chakra-ui/core';
 
 import Moment from 'react-moment';
@@ -47,42 +48,47 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                     borderWidth="2px"
                     margin={4}
                   >
-                    <Heading
-                      as="h5"
-                      size="md"
-                      margin={2}
-                      paddingBottom={2}
-                      fontWeight="bold"
-                    >
-                      {post.title}
-                    </Heading>
-                    {post.tags.map(tag => (
-                      <React.Fragment key={tag.id}>
-                        <Tag
-                          variantColor="gray"
-                          position="absolute"
-                          color="gray.900"
-                        >
-                          {tag.name}
-                        </Tag>
-                      </React.Fragment>
-                    ))}
-                    <Image
-                      src={post.image.url}
-                      alt="ブログのイメージ画像です"
-                      rounded="lg"
-                    />
-                    <Text as="i" margin={4} color="gray.600">
-                      <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
-                    </Text>
-                    <Text
-                      dangerouslySetInnerHTML={{ __html: `${post.content}` }}
-                      color="gray.500"
-                      isTruncated
-                      lineHeight="tight"
-                      maxHeight="24"
-                      margin={2}
-                    ></Text>
+                    <Flex direction="column">
+                      <Heading
+                        isTruncated
+                        as="h5"
+                        size="md"
+                        margin={2}
+                        fontWeight="bold"
+                        order={2}
+                      >
+                        {post.title}
+                      </Heading>
+                      {post.tags.map(tag => (
+                        <React.Fragment key={tag.id}>
+                          <Tag
+                            variantColor="gray"
+                            position="absolute"
+                            color="gray.900"
+                          >
+                            {tag.name}
+                          </Tag>
+                        </React.Fragment>
+                      ))}
+                      <Image
+                        src={post.image.url}
+                        alt="ブログのイメージ画像です"
+                        rounded="lg"
+                        order={1}
+                      />
+                      <Text as="i" margin={2} color="gray.600" order={3}>
+                        <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
+                      </Text>
+                      <Text
+                        dangerouslySetInnerHTML={{ __html: `${post.content}` }}
+                        color="gray.500"
+                        isTruncated
+                        lineHeight="tight"
+                        maxHeight="24"
+                        margin={2}
+                        order={4}
+                      ></Text>
+                    </Flex>
                   </Box>
                 </ChakraLink>
               </Link>

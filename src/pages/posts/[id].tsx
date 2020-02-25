@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NextPage } from 'next';
 import Moment from 'react-moment';
+import marked from 'marked';
 import HighLight from 'react-highlight';
 import {
   LineIcon,
@@ -23,6 +24,11 @@ type Props = {
   post: Post;
 };
 
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+});
+
 const PostContent: NextPage<Props> = ({ post }) => {
   return (
     <>
@@ -34,31 +40,32 @@ const PostContent: NextPage<Props> = ({ post }) => {
         url={`https://ryusou-blog.now.sh/posts/${post.id}`}
       />
       <Layout>
-        <Heading fontSize={{ sm: '3xl' }} margin={2} marginLeft={4}>
-          {post.title}
-        </Heading>
-        <div>
-          {post.tags.map(tag => (
-            <React.Fragment key={tag.id}>
-              <Tag marginLeft={6} marginTop={1} size={'sm'}>
-                {tag.name}
-              </Tag>
-            </React.Fragment>
-          ))}
-        </div>
-        <Text as="i" marginLeft={6} marginTop={1} color="gray.600">
-          <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
-        </Text>
-        <Image
-          src={post.image.url}
-          rounded="lg"
-          margin={4}
-          marginBottom={[10, 20, 20, 20]}
-        />
-        <Flex margin="6">
-          <HighLight innerHTML>{{ __html: `${post.content}` }}</HighLight>
+        <Flex direction="column" maxWidth="container.md">
+          <Heading fontSize={{ sm: '3xl' }} margin={2} marginLeft={4}>
+            {post.title}
+          </Heading>
+          <div>
+            {post.tags.map(tag => (
+              <React.Fragment key={tag.id}>
+                <Tag marginLeft={6} marginTop={1} size={'sm'}>
+                  {tag.name}
+                </Tag>
+              </React.Fragment>
+            ))}
+          </div>
+          <Text as="i" marginLeft={6} marginTop={1} color="gray.600">
+            <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
+          </Text>
+          <Image
+            src={post.image.url}
+            rounded="lg"
+            margin={4}
+            marginBottom={[10, 20, 20, 20]}
+          />
+          <Text margin={8}>
+            <HighLight innerHTML={true}>{marked(post.content)}</HighLight>
+          </Text>
         </Flex>
-
         <Flex
           margin={6}
           justify-content={'right'}

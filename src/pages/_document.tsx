@@ -10,9 +10,12 @@ export default class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          <link rel="shortcut icon" href={'https://t-cr.jp/favicon.ico'} />
-          <link rel="apple-touch-icon" href={'https://t-cr.jp/logo.png'} />
-          <link href="/path/to/styles/a11y-dark.css" rel="stylesheet" />
+          <link rel="shortcut icon" href={'/mainLogo.png'} />
+          <link rel="apple-touch-icon" href={'/mainLogo.png'} />
+          <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
