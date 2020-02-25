@@ -1,9 +1,0 @@
-{
-  "version": 2.0,
-  "build": {
-    "env": {
-      "API_KEY": "@api_key",
-      "X_API_KEY": "@x_api_key"
-    }
-  }
-}
