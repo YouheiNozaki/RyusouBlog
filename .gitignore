@@ -1,8 +1,8 @@
+.next/
 node_modules/
+out
 .env
 .env.build
-.next/
 next-env.d.ts
 .now
 yarn.lock
-out
