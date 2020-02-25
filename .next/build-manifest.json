@@ -23,6 +23,10 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/contact": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
@@ -34,6 +38,9 @@
     "/work": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
+<<<<<<< HEAD
+>>>>>>> parent of 1442caf... nowでデプロイ
+=======
 >>>>>>> parent of 1442caf... nowでデプロイ
     ]
   }
