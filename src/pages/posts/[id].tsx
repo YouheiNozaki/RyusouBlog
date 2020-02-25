@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { NextPage } from 'next';
+import Moment from 'react-moment';
+import HighLight from 'react-highlight';
 import {
   LineIcon,
   LineShareButton,
@@ -10,7 +12,6 @@ import {
 } from 'react-share';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
-import Moment from 'react-moment';
 
 import { axiosInstance } from '../../lib/api';
 import { Post } from '../../types';
@@ -55,8 +56,9 @@ const PostContent: NextPage<Props> = ({ post }) => {
           marginBottom={[10, 20, 20, 20]}
         />
         <Flex margin="6">
-          <div dangerouslySetInnerHTML={{ __html: `${post.content}` }}></div>
+          <HighLight innerHTML>{{ __html: `${post.content}` }}</HighLight>
         </Flex>
+
         <Flex
           margin={6}
           justify-content={'right'}

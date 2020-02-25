@@ -13,8 +13,6 @@ const HeadComponent: React.FC<HeadType> = ({
   return (
     <Head>
       <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta name="keywords" content={keyword} />
@@ -29,8 +27,6 @@ const HeadComponent: React.FC<HeadType> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <link rel="canonical" href={url} />
-      <link rel="shortcut icon" href={'https://t-cr.jp/favicon.ico'} />
-      <link rel="apple-touch-icon" href={'https://t-cr.jp/logo.png'} />
     </Head>
   );
 };
