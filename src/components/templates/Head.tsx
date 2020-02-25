@@ -22,15 +22,15 @@ const HeadComponent: React.FC<HeadType> = ({
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content={title} />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@tcr_jp" />
       <meta name="twitter:url" content={image} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <link rel="canonical" href={url} />
-      <link rel="shortcut icon" href={'https://t-cr.jp/favicon.ico'} />
-      <link rel="apple-touch-icon" href={'https://t-cr.jp/logo.png'} />
+      <link rel="shortcut icon" href={'/mainLogo.png'} />
+      <link rel="apple-touch-icon" href={'/mainLogo.png'} />
     </Head>
   );
 };
