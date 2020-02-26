@@ -25,8 +25,12 @@ type Props = {
 };
 
 marked.setOptions({
+  pedantic: false,
   gfm: true,
   breaks: true,
+  silent: false,
+  smartLists: true,
+  sanitize: false,
 });
 
 const PostContent: NextPage<Props> = ({ post }) => {
@@ -62,9 +66,9 @@ const PostContent: NextPage<Props> = ({ post }) => {
             margin={4}
             marginBottom={[10, 20, 20, 20]}
           />
-          <Text margin={8}>
-            <HighLight innerHTML={true}>{marked(post.content)}</HighLight>
-          </Text>
+          <Box margin={8}>
+            <HighLight innerHTML>{marked(post.content)}</HighLight>
+          </Box>
         </Flex>
         <Flex
           margin={6}

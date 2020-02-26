@@ -1068,29 +1068,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/document */ "./node_modules/next/document.js");
 /* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_document__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "/Users/youhei/NextJS-Blog/src/pages/_document.tsx";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+
 class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
+  static getInitialProps(ctx) {
+    return next_document__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(ctx);
+  }
+
   render() {
     return __jsx("html", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 6
+        lineNumber: 15
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Head"], {
       lang: "ja",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 7
+        lineNumber: 16
       },
       __self: this
     }, __jsx("meta", {
       charSet: "utf-8",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8
+        lineNumber: 17
       },
       __self: this
     }), __jsx("meta", {
@@ -1098,7 +1102,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       content: "initial-scale=1.0, width=device-width",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9
+        lineNumber: 18
       },
       __self: this
     }), __jsx("link", {
@@ -1106,7 +1110,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       href: '/mainLogo.png',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 22
       },
       __self: this
     }), __jsx("link", {
@@ -1114,33 +1118,33 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       href: '/mainLogo.png',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 23
       },
       __self: this
     }), __jsx("link", {
-      href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css",
+      href: "../../node_modules/highlight.js/styles/a11y-dark.css",
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 24
       },
       __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 29
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 30
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 31
       },
       __self: this
     })));
