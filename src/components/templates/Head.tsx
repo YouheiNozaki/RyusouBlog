@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Head from 'next/head';
+import { withTheme } from 'emotion-theming';
 
 import { HeadType } from '../../types';
 
@@ -31,4 +32,4 @@ const HeadComponent: React.FC<HeadType> = ({
   );
 };
 
-export default HeadComponent;
+export default withTheme(HeadComponent);

@@ -406,10 +406,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../theme */ "./src/theme/index.js");
+/* harmony import */ var _styles_layout_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/layout.css */ "./src/styles/layout.css");
+/* harmony import */ var _styles_layout_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_layout_css__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/youhei/NextJS-Blog/src/pages/_app.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -440,31 +443,36 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
       theme: _theme__WEBPACK_IMPORTED_MODULE_3__["default"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["CSSReset"], {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 20
       },
       __self: this
-    }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ColorModeProvider"], {
+    }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["ColorModeProvider"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 22
       },
       __self: this
     }, __jsx(Component, _extends({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 23
       },
       __self: this
     })))));
   }
 
 });
+
+/***/ }),
+
+/***/ "./src/styles/layout.css":
+/*!*******************************!*\
+  !*** ./src/styles/layout.css ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
