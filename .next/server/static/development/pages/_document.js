@@ -1122,7 +1122,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       },
       __self: this
     }), __jsx("link", {
-      href: "../../node_modules/highlight.js/styles/a11y-dark.css",
+      href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css",
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,

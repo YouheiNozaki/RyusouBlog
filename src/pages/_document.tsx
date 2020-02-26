@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href={'/mainLogo.png'} />
           <link rel="apple-touch-icon" href={'/mainLogo.png'} />
           <link
-            href="../../node_modules/highlight.js/styles/a11y-dark.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css"
             rel="stylesheet"
           />
         </Head>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NextPage } from 'next';
 import Moment from 'react-moment';
 import marked from 'marked';
-import HighLight from 'react-highlight';
+import Highlight from 'react-highlight';
 import {
   LineIcon,
   LineShareButton,
@@ -25,12 +25,9 @@ type Props = {
 };
 
 marked.setOptions({
-  pedantic: false,
   gfm: true,
   breaks: true,
   silent: false,
-  smartLists: true,
-  sanitize: false,
 });
 
 const PostContent: NextPage<Props> = ({ post }) => {
@@ -67,7 +64,7 @@ const PostContent: NextPage<Props> = ({ post }) => {
             marginBottom={[10, 20, 20, 20]}
           />
           <Box margin={8}>
-            <HighLight innerHTML>{marked(post.content)}</HighLight>
+            <Highlight innerHTML={true}>{marked(post.content)}</Highlight>
           </Box>
         </Flex>
         <Flex
