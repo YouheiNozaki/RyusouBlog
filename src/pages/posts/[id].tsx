@@ -40,6 +40,14 @@ renderer.link = function(href, title, text) {
     <a class="contentLink" href=${href} title=${title}>${text}</a>
   `;
 };
+renderer.table = function(header, body) {
+  return `
+    <table class="contentTable">
+      <thead class="contentThead">${header}</thead>
+      <tbody class="contentTbody">${body}</tbody>
+    </table>
+  `;
+};
 renderer.paragraph = function(text) {
   return `
     <p class="paragraph">${text}</p>
