@@ -1,6 +1,15 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import React from 'react';
+import Document, {
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from 'next/document';
 
 export default class MyDocument extends Document {
+  static getInitialProps(ctx: DocumentContext) {
+    return Document.getInitialProps(ctx);
+  }
   render() {
     return (
       <html>

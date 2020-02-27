@@ -12,7 +12,7 @@ import {
   Grid,
   Flex,
 } from '@chakra-ui/core';
-
+import marked from 'marked';
 import Moment from 'react-moment';
 import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
@@ -22,6 +22,12 @@ import { Post } from '../../types';
 type Props = {
   posts: Post[];
 };
+
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+  silent: false,
+});
 
 const PostsPage: NextPage<Props> = ({ posts }) => {
   return (
@@ -80,7 +86,9 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                         <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
                       </Text>
                       <Text
-                        dangerouslySetInnerHTML={{ __html: `${post.content}` }}
+                        dangerouslySetInnerHTML={{
+                          __html: `${marked(post.content)}`,
+                        }}
                         color="gray.500"
                         isTruncated
                         lineHeight="tight"

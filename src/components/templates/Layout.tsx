@@ -8,7 +8,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { Container } from './Container';
 
-const Layout: React.FC = ({ children = 'Ryusou Blog' }) => (
+const Layout: React.FC = ({ children }) => (
   <>
     <Container>
       <Header />
