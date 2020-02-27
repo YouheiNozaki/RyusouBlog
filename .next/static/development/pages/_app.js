@@ -17077,10 +17077,8 @@ var background = Object(_styled_system_core__WEBPACK_IMPORTED_MODULE_0__["system
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "border", function() { return border; });
 /* harmony import */ var _styled_system_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @styled-system/core */ "./node_modules/@styled-system/core/dist/index.esm.js");
-var _config;
 
-
-var config = (_config = {
+var config = {
   border: {
     property: 'border',
     scale: 'borders'
@@ -17140,59 +17138,72 @@ var config = (_config = {
   borderY: {
     properties: ['borderTop', 'borderBottom'],
     scale: 'borders'
-  },
-  borderTopWidth: {
-    property: 'borderTopWidth',
-    scale: 'borderWidths'
-  },
-  borderTopColor: {
-    property: 'borderTopColor',
-    scale: 'colors'
-  },
-  borderTopStyle: {
-    property: 'borderTopStyle',
-    scale: 'borderStyles'
   }
-}, _config["borderTopLeftRadius"] = {
+};
+config.borderTopWidth = {
+  property: 'borderTopWidth',
+  scale: 'borderWidths'
+};
+config.borderTopColor = {
+  property: 'borderTopColor',
+  scale: 'colors'
+};
+config.borderTopStyle = {
+  property: 'borderTopStyle',
+  scale: 'borderStyles'
+};
+config.borderTopLeftRadius = {
   property: 'borderTopLeftRadius',
   scale: 'radii'
-}, _config["borderTopRightRadius"] = {
+};
+config.borderTopRightRadius = {
   property: 'borderTopRightRadius',
   scale: 'radii'
-}, _config.borderBottomWidth = {
+};
+config.borderBottomWidth = {
   property: 'borderBottomWidth',
   scale: 'borderWidths'
-}, _config.borderBottomColor = {
+};
+config.borderBottomColor = {
   property: 'borderBottomColor',
   scale: 'colors'
-}, _config.borderBottomStyle = {
+};
+config.borderBottomStyle = {
   property: 'borderBottomStyle',
   scale: 'borderStyles'
-}, _config["borderBottomLeftRadius"] = {
+};
+config.borderBottomLeftRadius = {
   property: 'borderBottomLeftRadius',
   scale: 'radii'
-}, _config["borderBottomRightRadius"] = {
+};
+config.borderBottomRightRadius = {
   property: 'borderBottomRightRadius',
   scale: 'radii'
-}, _config.borderLeftWidth = {
+};
+config.borderLeftWidth = {
   property: 'borderLeftWidth',
   scale: 'borderWidths'
-}, _config.borderLeftColor = {
+};
+config.borderLeftColor = {
   property: 'borderLeftColor',
   scale: 'colors'
-}, _config.borderLeftStyle = {
+};
+config.borderLeftStyle = {
   property: 'borderLeftStyle',
   scale: 'borderStyles'
-}, _config.borderRightWidth = {
+};
+config.borderRightWidth = {
   property: 'borderRightWidth',
   scale: 'borderWidths'
-}, _config.borderRightColor = {
+};
+config.borderRightColor = {
   property: 'borderRightColor',
   scale: 'colors'
-}, _config.borderRightStyle = {
+};
+config.borderRightStyle = {
   property: 'borderRightStyle',
   scale: 'borderStyles'
-}, _config);
+};
 var border = Object(_styled_system_core__WEBPACK_IMPORTED_MODULE_0__["system"])(config);
 /* harmony default export */ __webpack_exports__["default"] = (border);
 
@@ -18429,8 +18440,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "get", function() { return get; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "responsive", function() { return responsive; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "css", function() { return css; });
-var _scales;
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 // based on https://github.com/developit/dlv
@@ -18474,7 +18483,7 @@ var multiples = {
   paddingY: ['paddingTop', 'paddingBottom'],
   size: ['width', 'height']
 };
-var scales = (_scales = {
+var scales = {
   color: 'colors',
   backgroundColor: 'colors',
   borderColor: 'colors',
@@ -18521,8 +18530,32 @@ var scales = (_scales = {
   borderBottomLeftRadius: 'radii',
   borderTopWidth: 'borderWidths',
   borderTopColor: 'colors',
-  borderTopStyle: 'borderStyles'
-}, _scales["borderTopLeftRadius"] = 'radii', _scales["borderTopRightRadius"] = 'radii', _scales.borderBottomWidth = 'borderWidths', _scales.borderBottomColor = 'colors', _scales.borderBottomStyle = 'borderStyles', _scales["borderBottomLeftRadius"] = 'radii', _scales["borderBottomRightRadius"] = 'radii', _scales.borderLeftWidth = 'borderWidths', _scales.borderLeftColor = 'colors', _scales.borderLeftStyle = 'borderStyles', _scales.borderRightWidth = 'borderWidths', _scales.borderRightColor = 'colors', _scales.borderRightStyle = 'borderStyles', _scales.outlineColor = 'colors', _scales.boxShadow = 'shadows', _scales.textShadow = 'shadows', _scales.zIndex = 'zIndices', _scales.width = 'sizes', _scales.minWidth = 'sizes', _scales.maxWidth = 'sizes', _scales.height = 'sizes', _scales.minHeight = 'sizes', _scales.maxHeight = 'sizes', _scales.flexBasis = 'sizes', _scales.size = 'sizes', _scales.fill = 'colors', _scales.stroke = 'colors', _scales);
+  borderTopStyle: 'borderStyles',
+  borderBottomWidth: 'borderWidths',
+  borderBottomColor: 'colors',
+  borderBottomStyle: 'borderStyles',
+  borderLeftWidth: 'borderWidths',
+  borderLeftColor: 'colors',
+  borderLeftStyle: 'borderStyles',
+  borderRightWidth: 'borderWidths',
+  borderRightColor: 'colors',
+  borderRightStyle: 'borderStyles',
+  outlineColor: 'colors',
+  boxShadow: 'shadows',
+  textShadow: 'shadows',
+  zIndex: 'zIndices',
+  width: 'sizes',
+  minWidth: 'sizes',
+  maxWidth: 'sizes',
+  height: 'sizes',
+  minHeight: 'sizes',
+  maxHeight: 'sizes',
+  flexBasis: 'sizes',
+  size: 'sizes',
+  // svg
+  fill: 'colors',
+  stroke: 'colors'
+};
 
 var positiveOrNegative = function positiveOrNegative(scale, value) {
   if (typeof value !== 'number' || value >= 0) {
@@ -18559,7 +18592,6 @@ var responsive = function responsive(styles) {
 
       for (var i = 0; i < value.slice(0, mediaQueries.length).length; i++) {
         var media = mediaQueries[i];
-        if (value[i] == null) continue;
 
         if (!media) {
           next[key] = value[i];
@@ -18567,6 +18599,7 @@ var responsive = function responsive(styles) {
         }
 
         next[media] = next[media] || {};
+        if (value[i] == null) continue;
         next[media][key] = value[i];
       }
     }
@@ -24614,16 +24647,16 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/layout.css":
-/*!*******************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!./node_modules/postcss-loader/src??__nextjs_postcss!./src/styles/layout.css ***!
-  \*******************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/post.css":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!./node_modules/postcss-loader/src??__nextjs_postcss!./src/styles/post.css ***!
+  \*****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "h1 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 2.25rem;\n  line-height: 1.1;\n}\nh2 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1.62671rem;\n  line-height: 1.1;\n}\nh3 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1.38316rem;\n  line-height: 1.1;\n}\nh4 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1rem;\n  line-height: 1.1;\n}\nh5 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 0.85028rem;\n  line-height: 1.1;\n}\nh6 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 0.78405rem;\n  line-height: 1.1;\n}\nhgroup {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nul {\n  margin-left: 1.45rem;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  list-style-position: outside;\n  list-style-image: none;\n}\nol {\n  margin-left: 1.45rem;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  list-style-position: outside;\n  list-style-image: none;\n}\ndl {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\ndd {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\np {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nfigure {\n  margin: 1em 40px;\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\npre {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  margin-bottom: 1.45rem;\n  line-height: 1.42;\n  border-radius: 3px;\n  padding: 1.45rem;\n}\ntable {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  font-size: 1rem;\n  line-height: 1.45rem;\n  border-collapse: collapse;\n  width: 100%;\n}\nfieldset {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nblockquote {\n  margin-left: 1.45rem;\n  margin-right: 1.45rem;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nform {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nnoscript {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\niframe {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nhr {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: calc(1.45rem - 1px);\n  border: none;\n  height: 1px;\n}\naddress {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nb {\n  font-weight: bold;\n}\nstrong {\n  font-weight: bold;\n}\ndt {\n  font-weight: bold;\n}\nth {\n  font-weight: bold;\n}\nli {\n  margin: 1.45rem;\n}\nol li {\n  padding-left: 0;\n}\nul li {\n  padding-left: 0;\n}\nli > ol {\n  margin-left: 1.45rem;\n  margin-bottom: calc(1.45rem / 2);\n  margin-top: calc(1.45rem / 2);\n}\nli > ul {\n  margin-left: 1.45rem;\n  margin-bottom: calc(1.45rem / 2);\n  margin-top: calc(1.45rem / 2);\n}\nblockquote *:last-child {\n  margin-bottom: 0;\n}\n\nli > p {\n  margin-bottom: calc(1.45rem / 2);\n}\ncode {\n  font-size: 1rem;\n  line-height: 1.45rem;\n}\nthead {\n  text-align: left;\n}\ntd,\nth {\n  text-align: left;\n  border-bottom: 1px solid #e2e8f0;\n  font-feature-settings: 'tnum';\n  -moz-font-feature-settings: 'tnum';\n  -ms-font-feature-settings: 'tnum';\n  -webkit-font-feature-settings: 'tnum';\n  padding-left: 0.96667rem;\n  padding-right: 0.96667rem;\n  padding-top: 0.725rem;\n  padding-bottom: calc(0.725rem - 1px);\n}\nth:first-child,\ntd:first-child {\n  padding-left: 0;\n}\nth:last-child,\ntd:last-child {\n  padding-right: 0;\n}\n", "",{"version":3,"sources":["layout.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,kBAAkB;EAClB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,oBAAoB;EACpB,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,4BAA4B;EAC5B,sBAAsB;AACxB;AACA;EACE,oBAAoB;EACpB,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,4BAA4B;EAC5B,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,gBAAgB;EAChB,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,sBAAsB;EACtB,iBAAiB;EACjB,kBAAkB;EAClB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,eAAe;EACf,oBAAoB;EACpB,yBAAyB;EACzB,WAAW;AACb;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,oBAAoB;EACpB,qBAAqB;EACrB,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,kCAAkC;EAClC,YAAY;EACZ,WAAW;AACb;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;AACA;EACE,eAAe;AACjB;AACA;EACE,eAAe;AACjB;AACA;EACE,eAAe;AACjB;AACA;EACE,oBAAoB;EACpB,gCAAgC;EAChC,6BAA6B;AAC/B;AACA;EACE,oBAAoB;EACpB,gCAAgC;EAChC,6BAA6B;AAC/B;AACA;EACE,gBAAgB;AAClB;;AAEA;EACE,gCAAgC;AAClC;AACA;EACE,eAAe;EACf,oBAAoB;AACtB;AACA;EACE,gBAAgB;AAClB;AACA;;EAEE,gBAAgB;EAChB,gCAAgC;EAChC,6BAA6B;EAC7B,kCAAkC;EAClC,iCAAiC;EACjC,qCAAqC;EACrC,wBAAwB;EACxB,yBAAyB;EACzB,qBAAqB;EACrB,oCAAoC;AACtC;AACA;;EAEE,eAAe;AACjB;AACA;;EAEE,gBAAgB;AAClB","file":"layout.css","sourcesContent":["h1 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 2.25rem;\n  line-height: 1.1;\n}\nh2 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1.62671rem;\n  line-height: 1.1;\n}\nh3 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1.38316rem;\n  line-height: 1.1;\n}\nh4 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1rem;\n  line-height: 1.1;\n}\nh5 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 0.85028rem;\n  line-height: 1.1;\n}\nh6 {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 0.78405rem;\n  line-height: 1.1;\n}\nhgroup {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nul {\n  margin-left: 1.45rem;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  list-style-position: outside;\n  list-style-image: none;\n}\nol {\n  margin-left: 1.45rem;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  list-style-position: outside;\n  list-style-image: none;\n}\ndl {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\ndd {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\np {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nfigure {\n  margin: 1em 40px;\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\npre {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  margin-bottom: 1.45rem;\n  line-height: 1.42;\n  border-radius: 3px;\n  padding: 1.45rem;\n}\ntable {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  font-size: 1rem;\n  line-height: 1.45rem;\n  border-collapse: collapse;\n  width: 100%;\n}\nfieldset {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nblockquote {\n  margin-left: 1.45rem;\n  margin-right: 1.45rem;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nform {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nnoscript {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\niframe {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nhr {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: calc(1.45rem - 1px);\n  border: none;\n  height: 1px;\n}\naddress {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\nb {\n  font-weight: bold;\n}\nstrong {\n  font-weight: bold;\n}\ndt {\n  font-weight: bold;\n}\nth {\n  font-weight: bold;\n}\nli {\n  margin: 1.45rem;\n}\nol li {\n  padding-left: 0;\n}\nul li {\n  padding-left: 0;\n}\nli > ol {\n  margin-left: 1.45rem;\n  margin-bottom: calc(1.45rem / 2);\n  margin-top: calc(1.45rem / 2);\n}\nli > ul {\n  margin-left: 1.45rem;\n  margin-bottom: calc(1.45rem / 2);\n  margin-top: calc(1.45rem / 2);\n}\nblockquote *:last-child {\n  margin-bottom: 0;\n}\n\nli > p {\n  margin-bottom: calc(1.45rem / 2);\n}\ncode {\n  font-size: 1rem;\n  line-height: 1.45rem;\n}\nthead {\n  text-align: left;\n}\ntd,\nth {\n  text-align: left;\n  border-bottom: 1px solid #e2e8f0;\n  font-feature-settings: 'tnum';\n  -moz-font-feature-settings: 'tnum';\n  -ms-font-feature-settings: 'tnum';\n  -webkit-font-feature-settings: 'tnum';\n  padding-left: 0.96667rem;\n  padding-right: 0.96667rem;\n  padding-top: 0.725rem;\n  padding-bottom: calc(0.725rem - 1px);\n}\nth:first-child,\ntd:first-child {\n  padding-left: 0;\n}\nth:last-child,\ntd:last-child {\n  padding-right: 0;\n}\n"]}]);
+exports.push([module.i, "h1.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 1.45rem;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 2.25rem;\n  line-height: 1.1;\n}\nh2.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 1.45rem;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1.62671rem;\n  line-height: 1.1;\n}\nh3.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1.38316rem;\n  line-height: 1.1;\n}\nh4.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1rem;\n  line-height: 1.1;\n}\nh5.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 0.85028rem;\n  line-height: 1.1;\n}\nh6.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 0.78405rem;\n  line-height: 1.1;\n}\np {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\na.contentLink {\n  color: #00a3c4;\n  font-weight: bold;\n  margin: 1.45rem;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na.link:active,\na.link:hover {\n  outline-width: 0;\n}\np.paragraph {\n  line-height: 1.625;\n  margin-bottom: 2rem;\n}\ntable {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  font-size: 1rem;\n  line-height: 1.45rem;\n  border-collapse: collapse;\n  width: 100%;\n}\nthead {\n  text-align: left;\n}\ntd,\nth {\n  text-align: left;\n  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);\n  font-feature-settings: 'tnum';\n  -moz-font-feature-settings: 'tnum';\n  -ms-font-feature-settings: 'tnum';\n  -webkit-font-feature-settings: 'tnum';\n  padding-left: 0.96667rem;\n  padding-right: 0.96667rem;\n  padding-top: 0.725rem;\n  padding-bottom: calc(0.725rem - 1px);\n}\nth:first-child,\ntd:first-child {\n  padding-left: 0;\n}\nth:last-child,\ntd:last-child {\n  padding-right: 0;\n}\npre {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  margin-bottom: 1.45rem;\n  font-size: 0.85rem;\n  line-height: 1.42;\n  border-radius: 3px;\n  overflow: auto;\n  word-wrap: normal;\n  padding: 1.45rem;\n}\nli {\n  margin-left: 2rem;\n  padding-bottom: 1.45rem;\n}\n", "",{"version":3,"sources":["post.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,eAAe;EACf,mBAAmB;EACnB,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,kBAAkB;EAClB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,mBAAmB;EACnB,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,eAAe;EACf,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,cAAc;EACd,iBAAiB;EACjB,kCAAkC;EAClC,qBAAqB;EACrB,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;AACxB;AACA;EACE,cAAc;EACd,iBAAiB;EACjB,eAAe;EACf,6BAA6B;EAC7B,qCAAqC;AACvC;AACA;;EAEE,gBAAgB;AAClB;AACA;EACE,kBAAkB;EAClB,mBAAmB;AACrB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,iBAAiB;EACjB,eAAe;EACf,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,eAAe;EACf,oBAAoB;EACpB,yBAAyB;EACzB,WAAW;AACb;AACA;EACE,gBAAgB;AAClB;AACA;;EAEE,gBAAgB;EAChB,8CAA8C;EAC9C,6BAA6B;EAC7B,kCAAkC;EAClC,iCAAiC;EACjC,qCAAqC;EACrC,wBAAwB;EACxB,yBAAyB;EACzB,qBAAqB;EACrB,oCAAoC;AACtC;AACA;;EAEE,eAAe;AACjB;AACA;;EAEE,gBAAgB;AAClB;AACA;EACE,cAAc;EACd,eAAe;EACf,aAAa;EACb,sBAAsB;EACtB,kBAAkB;EAClB,iBAAiB;EACjB,kBAAkB;EAClB,cAAc;EACd,iBAAiB;EACjB,gBAAgB;AAClB;AACA;EACE,iBAAiB;EACjB,uBAAuB;AACzB","file":"post.css","sourcesContent":["h1.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 1.45rem;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 2.25rem;\n  line-height: 1.1;\n}\nh2.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 1.45rem;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1.62671rem;\n  line-height: 1.1;\n}\nh3.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1.38316rem;\n  line-height: 1.1;\n}\nh4.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 1rem;\n  line-height: 1.1;\n}\nh5.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 0.85028rem;\n  line-height: 1.1;\n}\nh6.author {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  color: inherit;\n  font-weight: bold;\n  text-rendering: optimizeLegibility;\n  font-size: 0.78405rem;\n  line-height: 1.1;\n}\np {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n}\na.contentLink {\n  color: #00a3c4;\n  font-weight: bold;\n  margin: 1.45rem;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na.link:active,\na.link:hover {\n  outline-width: 0;\n}\np.paragraph {\n  line-height: 1.625;\n  margin-bottom: 2rem;\n}\ntable {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  padding-bottom: 0;\n  padding-left: 0;\n  padding-right: 0;\n  padding-top: 0;\n  margin-bottom: 1.45rem;\n  font-size: 1rem;\n  line-height: 1.45rem;\n  border-collapse: collapse;\n  width: 100%;\n}\nthead {\n  text-align: left;\n}\ntd,\nth {\n  text-align: left;\n  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);\n  font-feature-settings: 'tnum';\n  -moz-font-feature-settings: 'tnum';\n  -ms-font-feature-settings: 'tnum';\n  -webkit-font-feature-settings: 'tnum';\n  padding-left: 0.96667rem;\n  padding-right: 0.96667rem;\n  padding-top: 0.725rem;\n  padding-bottom: calc(0.725rem - 1px);\n}\nth:first-child,\ntd:first-child {\n  padding-left: 0;\n}\nth:last-child,\ntd:last-child {\n  padding-right: 0;\n}\npre {\n  margin-left: 0;\n  margin-right: 0;\n  margin-top: 0;\n  margin-bottom: 1.45rem;\n  font-size: 0.85rem;\n  line-height: 1.42;\n  border-radius: 3px;\n  overflow: auto;\n  word-wrap: normal;\n  padding: 1.45rem;\n}\nli {\n  margin-left: 2rem;\n  padding-bottom: 1.45rem;\n}\n"]}]);
 
 
 /***/ }),
@@ -33606,7 +33639,7 @@ exports.inlineProp = inlineProp;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.12.0
+/** @license React v16.13.0
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -33622,8 +33655,6 @@ exports.inlineProp = inlineProp;
 if (true) {
   (function() {
 'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -33644,69 +33675,15 @@ var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
 var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
 var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
 var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
 var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
 var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
 var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
 
 function isValidElementType(type) {
   return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE);
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
 }
-
-/**
- * Forked from fbjs/warning:
- * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js
- *
- * Only change is we use console.warn instead of console.error,
- * and do nothing when 'console' is not supported.
- * This really simplifies the code.
- * ---
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-var lowPriorityWarningWithoutStack = function () {};
-
-{
-  var printWarning = function (format) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-
-    if (typeof console !== 'undefined') {
-      console.warn(message);
-    }
-
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  lowPriorityWarningWithoutStack = function (condition, format) {
-    if (format === undefined) {
-      throw new Error('`lowPriorityWarningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (!condition) {
-      for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
-      }
-
-      printWarning.apply(void 0, [format].concat(args));
-    }
-  };
-}
-
-var lowPriorityWarningWithoutStack$1 = lowPriorityWarningWithoutStack;
 
 function typeOf(object) {
   if (typeof object === 'object' && object !== null) {
@@ -33768,8 +33745,9 @@ var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecat
 function isAsyncMode(object) {
   {
     if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-      hasWarnedAboutDeprecatedIsAsyncMode = true;
-      lowPriorityWarningWithoutStack$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
     }
   }
 
@@ -33812,7 +33790,6 @@ function isSuspense(object) {
   return typeOf(object) === REACT_SUSPENSE_TYPE;
 }
 
-exports.typeOf = typeOf;
 exports.AsyncMode = AsyncMode;
 exports.ConcurrentMode = ConcurrentMode;
 exports.ContextConsumer = ContextConsumer;
@@ -33826,7 +33803,6 @@ exports.Portal = Portal;
 exports.Profiler = Profiler;
 exports.StrictMode = StrictMode;
 exports.Suspense = Suspense;
-exports.isValidElementType = isValidElementType;
 exports.isAsyncMode = isAsyncMode;
 exports.isConcurrentMode = isConcurrentMode;
 exports.isContextConsumer = isContextConsumer;
@@ -33840,6 +33816,8 @@ exports.isPortal = isPortal;
 exports.isProfiler = isProfiler;
 exports.isStrictMode = isStrictMode;
 exports.isSuspense = isSuspense;
+exports.isValidElementType = isValidElementType;
+exports.typeOf = typeOf;
   })();
 }
 
@@ -40013,7 +39991,7 @@ function useTimeout(callback, delay) {
 /*!*****************************************!*\
   !*** ./node_modules/tslib/tslib.es6.js ***!
   \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40038,6 +40016,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -40106,10 +40086,11 @@ function __metadata(metadataKey, metadataValue) {
 }
 
 function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 }
@@ -40147,14 +40128,15 @@ function __exportStar(m, exports) {
 }
 
 function __values(o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
-    return {
+    if (o && typeof o.length === "number") return {
         next: function () {
             if (o && i >= o.length) o = void 0;
             return { value: o && o[i++], done: !o };
         }
     };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }
 
 function __read(o, n) {
@@ -40233,6 +40215,21 @@ function __importStar(mod) {
 
 function __importDefault(mod) {
     return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, privateMap) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+    }
+    return privateMap.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, privateMap, value) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+    }
+    privateMap.set(receiver, value);
+    return value;
 }
 
 
@@ -41744,8 +41741,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/core */ "./node_modules/@chakra-ui/core/dist/es/index.js");
 /* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../theme */ "./src/theme/index.js");
-/* harmony import */ var _styles_layout_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../styles/layout.css */ "./src/styles/layout.css");
-/* harmony import */ var _styles_layout_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_styles_layout_css__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _styles_post_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../styles/post.css */ "./src/styles/post.css");
+/* harmony import */ var _styles_post_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_styles_post_css__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -41785,7 +41782,13 @@ function (_App) {
           lineNumber: 20
         },
         __self: this
-      }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["ColorModeProvider"], {
+      }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["CSSReset"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_9__["ColorModeProvider"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 22
@@ -41842,14 +41845,14 @@ function (_App) {
 
 /***/ }),
 
-/***/ "./src/styles/layout.css":
-/*!*******************************!*\
-  !*** ./src/styles/layout.css ***!
-  \*******************************/
+/***/ "./src/styles/post.css":
+/*!*****************************!*\
+  !*** ./src/styles/post.css ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??__nextjs_postcss!./layout.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/layout.css");
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??__nextjs_postcss!./post.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/post.css");
 
 if (typeof content === 'string') {
   content = [[module.i, content, '']];
@@ -41883,9 +41886,9 @@ if (content.locals) {
 if (true) {
   if (!content.locals) {
     module.hot.accept(
-      /*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??__nextjs_postcss!./layout.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/layout.css",
+      /*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??__nextjs_postcss!./post.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/post.css",
       function () {
-        var newContent = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??__nextjs_postcss!./layout.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/layout.css");
+        var newContent = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-4-1!../../node_modules/postcss-loader/src??__nextjs_postcss!./post.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/post.css");
 
         if (typeof newContent === 'string') {
           newContent = [[module.i, newContent, '']];

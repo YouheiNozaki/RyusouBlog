@@ -24,6 +24,28 @@ type Props = {
   post: Post;
 };
 
+const renderer = new marked.Renderer();
+
+renderer.heading = function(text, level) {
+  const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
+  return `
+          <h${level} class="author" href="#${escapedText}">
+            ${text}
+          </h${level}>
+        `;
+};
+renderer.link = function(href, title, text) {
+  return `
+    <a class="contentLink" href=${href} title=${title}>${text}</a>
+  `;
+};
+renderer.paragraph = function(text) {
+  return `
+    <p class="paragraph">${text}</p>
+  `;
+};
+
 marked.setOptions({
   gfm: true,
   breaks: true,
@@ -32,7 +54,7 @@ marked.setOptions({
 
 const PostContent: NextPage<Props> = ({ post }) => {
   return (
-    <>
+    <React.Fragment>
       <HeadComponent
         title={post.title}
         description={post.title}
@@ -64,7 +86,9 @@ const PostContent: NextPage<Props> = ({ post }) => {
             marginBottom={[10, 20, 20, 20]}
           />
           <Box margin={8}>
-            <Highlight innerHTML={true}>{marked(post.content)}</Highlight>
+            <Highlight innerHTML={true}>
+              {marked(post.content, { renderer: renderer })}
+            </Highlight>
           </Box>
         </Flex>
         <Flex
@@ -109,7 +133,7 @@ const PostContent: NextPage<Props> = ({ post }) => {
           </Box>
         </Flex>
       </Layout>
-    </>
+    </React.Fragment>
   );
 };
 

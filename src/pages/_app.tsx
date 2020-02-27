@@ -1,9 +1,9 @@
 import React from 'react';
 import App, { AppContext } from 'next/app';
-import { ThemeProvider, ColorModeProvider } from '@chakra-ui/core';
+import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 
 import theme from '../theme';
-import '../styles/layout.css';
+import '../styles/post.css';
 
 export default class extends App {
   static async getInitialProps({ Component, ctx }: AppContext) {
@@ -18,7 +18,7 @@ export default class extends App {
     return (
       <>
         <ThemeProvider theme={theme}>
-          {/* <CSSReset /> */}
+          <CSSReset />
           <ColorModeProvider>
             <Component {...pageProps} />
           </ColorModeProvider>
