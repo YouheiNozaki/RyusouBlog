@@ -101,7 +101,8 @@ p {
 a.contentLink {
   color: #00a3c4;
   font-weight: bold;
-  margin: 1.45rem;
+  margin-bottom: 1.45rem;
+  margin-top: 1.45rem;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
