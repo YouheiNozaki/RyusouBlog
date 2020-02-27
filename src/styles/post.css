@@ -103,8 +103,6 @@ a.contentLink {
   font-weight: bold;
   margin-bottom: 1.45rem;
   margin-top: 1.45rem;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
 }
 a.link:active,
 a.link:hover {
@@ -112,10 +110,11 @@ a.link:hover {
 }
 p.paragraph {
   line-height: 1.625;
+  margin: 0 auto;
   margin-bottom: 2rem;
 }
-table {
-  margin-left: 0;
+table.contentTable {
+  margin-left: 1.45rem;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
@@ -128,13 +127,13 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-thead {
+thead.contentThead {
   text-align: left;
 }
 td,
 th {
   text-align: left;
-  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+  border-bottom: 1px solid #9decf9;
   font-feature-settings: 'tnum';
   -moz-font-feature-settings: 'tnum';
   -ms-font-feature-settings: 'tnum';
@@ -164,7 +163,25 @@ pre {
   word-wrap: normal;
   padding: 1.45rem;
 }
+code.hljs {
+  margin: 0 auto;
+}
 li {
   margin-left: 2rem;
   padding-bottom: 1.45rem;
+}
+@media screen and (max-width: 30rem) {
+  p,
+  table,
+  code.hljs,
+  a.contentLink {
+    max-width: 20rem;
+  }
+  pre {
+    padding: 0.5rem;
+  }
+  li {
+    max-width: 18rem;
+    margin-left: 2rem;
+  }
 }
