@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { AppContext } from 'next/app';
+import { AppProps } from 'next/app';
 import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 
 import theme from '../theme';
