@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { NextPage } from 'next';
 import Moment from 'react-moment';
-import marked from 'marked';
 import Highlight from 'react-highlight';
 import {
   LineIcon,
@@ -15,6 +14,7 @@ import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
 import { axiosInstance } from '../../lib/api';
+import { markedOption, markedRender } from '../../lib/marked';
 import { Post } from '../../types';
 
 import Layout from '../../components/templates/Layout';
@@ -23,42 +23,6 @@ import HeadComponent from '../../components/templates/Head';
 type Props = {
   post: Post;
 };
-
-const renderer = new marked.Renderer();
-
-renderer.heading = function(text, level) {
-  const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-
-  return `
-          <h${level} class="author" href="#${escapedText}">
-            ${text}
-          </h${level}>
-        `;
-};
-renderer.link = function(href, title, text) {
-  return `
-    <a class="contentLink" href=${href} title=${title}>${text}</a>
-  `;
-};
-renderer.table = function(header, body) {
-  return `
-    <table class="contentTable">
-      <thead class="contentThead">${header}</thead>
-      <tbody class="contentTbody">${body}</tbody>
-    </table>
-  `;
-};
-renderer.paragraph = function(text) {
-  return `
-    <p class="paragraph">${text}</p>
-  `;
-};
-
-marked.setOptions({
-  gfm: true,
-  breaks: true,
-  silent: false,
-});
 
 const PostContent: NextPage<Props> = ({ post }) => {
   return (
@@ -95,7 +59,7 @@ const PostContent: NextPage<Props> = ({ post }) => {
           />
           <Box margin={8}>
             <Highlight innerHTML={true}>
-              {marked(post.content, { renderer: renderer })}
+              {markedOption(post.content, { renderer: markedRender() })}
             </Highlight>
           </Box>
         </Flex>

@@ -12,22 +12,18 @@ import {
   Grid,
   Flex,
 } from '@chakra-ui/core';
-import marked from 'marked';
 import Moment from 'react-moment';
+
 import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
+
 import { axiosInstance } from '../../lib/api';
+import { markedOption } from '../../lib/marked';
 import { Post } from '../../types';
 
 type Props = {
   posts: Post[];
 };
-
-marked.setOptions({
-  gfm: true,
-  breaks: true,
-  silent: false,
-});
 
 const PostsPage: NextPage<Props> = ({ posts }) => {
   return (
@@ -90,7 +86,7 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                       </Text>
                       <Text
                         dangerouslySetInnerHTML={{
-                          __html: `${marked(post.content)}`,
+                          __html: `${markedOption(post.content)}`,
                         }}
                         color="gray.500"
                         isTruncated
