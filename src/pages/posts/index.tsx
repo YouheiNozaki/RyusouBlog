@@ -65,24 +65,27 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                       >
                         {post.title}
                       </Heading>
-                      {post.tags.map(tag => (
-                        <React.Fragment key={tag.id}>
-                          <Tag
-                            variantColor="gray"
-                            position="absolute"
-                            color="gray.900"
-                          >
-                            {tag.name}
-                          </Tag>
-                        </React.Fragment>
-                      ))}
                       <Image
                         src={post.image.url}
                         alt="ブログのイメージ画像です"
                         rounded="lg"
                         order={1}
                       />
-                      <Text as="i" margin={2} color="gray.600" order={3}>
+                      <Flex order={3}>
+                        {post.tags.map(tag => (
+                          <React.Fragment key={tag.id}>
+                            <Tag
+                              variantColor="gray"
+                              color="gray.900"
+                              // width={32}
+                              marginLeft={1}
+                            >
+                              {tag.name}
+                            </Tag>
+                          </React.Fragment>
+                        ))}
+                      </Flex>
+                      <Text as="i" margin={2} color="gray.600" order={4}>
                         <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
                       </Text>
                       <Text
@@ -94,7 +97,7 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                         lineHeight="tight"
                         maxHeight="24"
                         margin={2}
-                        order={4}
+                        order={5}
                       ></Text>
                     </Flex>
                   </Box>
