@@ -172,10 +172,12 @@ li {
 }
 @media screen and (max-width: 30rem) {
   p,
-  table.contentTable,
   code.hljs,
   a.contentLink {
     max-width: 20rem;
+  }
+  table.contentTable {
+    max-width: 16rem;
   }
   pre {
     padding: 0.5rem;
