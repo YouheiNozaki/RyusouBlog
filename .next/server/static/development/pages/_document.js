@@ -1078,6 +1078,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
 
   render() {
     return __jsx("html", {
+      lang: "ja",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 15
@@ -1129,22 +1130,30 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 24
       },
       __self: this
+    }), __jsx("meta", {
+      name: "description",
+      content: "\u308A\u3085\u30FC\u305D\u3046\u30D6\u30ED\u30B0\u3067\u306F\u3001\u6559\u54E1\u3067\u3082\u3042\u308B\u308A\u3085\u30FC\u305D\u3046\u304C\u30D7\u30ED\u30B0\u30E9\u30DF\u30F3\u30B0\u306E\u6280\u8853\u306B\u3064\u3044\u3066\u7D39\u4ECB\u3057\u3066\u3044\u307E\u3059\u3002",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
     })), __jsx("body", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 33
       },
       __self: this
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 34
       },
       __self: this
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 35
       },
       __self: this
     })));

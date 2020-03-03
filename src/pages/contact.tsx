@@ -87,7 +87,11 @@ const ContactPage: React.FC = () => {
             <FormErrorMessage>
               {errors.email && errors.email.message}
             </FormErrorMessage>
-            <FormHelperText id="email-helper-text" marginBottom="4">
+            <FormHelperText
+              id="email-helper-text"
+              marginBottom="4"
+              color="gray.500"
+            >
               We'll never share your email address.
             </FormHelperText>
             <FormLabel htmlFor="Inquiry">Inquiry</FormLabel>
@@ -102,7 +106,12 @@ const ContactPage: React.FC = () => {
               {errors.body && errors.body.message}
             </FormErrorMessage>
           </FormControl>
-          <Button type="submit" variantColor="teal" marginLeft="6">
+          <Button
+            type="submit"
+            variantColor="teal"
+            marginLeft="6"
+            color="gray.100"
+          >
             Submit
           </Button>
         </form>

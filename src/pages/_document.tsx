@@ -16,11 +16,6 @@ export default class MyDocument extends Document {
         <Head lang="ja">
           <meta charSet="utf-8" />
           <meta
-            name="description"
-            content="りゅーそうのプログラミングの技術ブログ"
-          />
-          >
-          <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
@@ -29,6 +24,10 @@ export default class MyDocument extends Document {
           <link
             href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css"
             rel="stylesheet"
+          />
+          <meta
+            name="description"
+            content="りゅーそうブログでは、教員でもあるりゅーそうがプログラミングの技術について紹介しています。"
           />
         </Head>
         <body>
