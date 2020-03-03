@@ -12,9 +12,14 @@ export default class MyDocument extends Document {
   }
   render() {
     return (
-      <html>
+      <html lang="ja">
         <Head lang="ja">
           <meta charSet="utf-8" />
+          <meta
+            name="description"
+            content="りゅーそうのプログラミングの技術ブログ"
+          />
+          >
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"

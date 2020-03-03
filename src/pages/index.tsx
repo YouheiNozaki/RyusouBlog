@@ -49,6 +49,7 @@ const IndexPage: NextPage = () => {
           marginLeft={[20, 20, 5, 5]}
           marginBottom="10"
           rounded="full"
+          alt="りゅーそうのアイコン。ネコのアイコン"
         />
       </Flex>
       <Heading marginBottom="10" marginLeft="2">
