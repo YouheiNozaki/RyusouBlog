@@ -90,9 +90,9 @@ const ContactPage: React.FC = () => {
             <FormHelperText
               id="email-helper-text"
               marginBottom="4"
-              color="gray.500"
+              color="gray.600"
             >
-              We'll never share your email address.
+              I'll never share your email address.
             </FormHelperText>
             <FormLabel htmlFor="Inquiry">Inquiry</FormLabel>
             <Textarea
@@ -110,7 +110,8 @@ const ContactPage: React.FC = () => {
             type="submit"
             variantColor="teal"
             marginLeft="6"
-            color="gray.100"
+            color="black"
+            backgroundColor="teal.400"
           >
             Submit
           </Button>
