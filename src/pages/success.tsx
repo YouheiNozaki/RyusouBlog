@@ -4,6 +4,7 @@ import { Image, Flex } from '@chakra-ui/core';
 
 import Layout from '../components/templates/Layout';
 import HeadComponent from '../components/templates/Head';
+import { ShareButton } from '../components/molecules/ShareButton';
 
 const SuccessPage: React.FC = () => (
   <>
@@ -31,6 +32,10 @@ const SuccessPage: React.FC = () => (
           top="24"
         />
       </Flex>
+      <ShareButton
+        title={'りゅーそうくんが出てきたよ'}
+        url={`https://ryusou-mtkh.now.sh/success`}
+      />
     </Layout>
   </>
 );

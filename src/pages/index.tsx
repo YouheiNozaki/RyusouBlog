@@ -5,7 +5,8 @@ import { Heading, Text, Image, Flex } from '@chakra-ui/core';
 
 import Layout from '../components/templates/Layout';
 import HeadComponent from '../components/templates/Head';
-import TechBoxList from '../components/molecules/TechBoxList';
+import { ShareButton } from '../components/molecules/ShareButton';
+import { TechBoxList } from '../components/molecules/TechBoxList';
 
 const IndexPage: NextPage = () => {
   return (
@@ -57,6 +58,10 @@ const IndexPage: NextPage = () => {
       <Text fontSize="xl" fontWeight="bold" marginLeft="4">
         and more...!!
       </Text>
+      <ShareButton
+        title={'りゅーそうブログトップページ'}
+        url={`https://ryusou-mtkh.now.sh/`}
+      />
     </Layout>
   );
 };

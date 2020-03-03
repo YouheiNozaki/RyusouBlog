@@ -3,7 +3,7 @@ import { Grid } from '@chakra-ui/core';
 
 import TechBox from '../atom/Techbox';
 
-const TechBoxList: React.FC = () => (
+export const TechBoxList: React.FC = () => (
   <Grid
     templateColumns={{
       base: 'repeat(2, 1fr)',
@@ -11,8 +11,8 @@ const TechBoxList: React.FC = () => (
       lg: 'repeat(5, 1fr)',
       xl: 'repeat(5, 1fr)',
     }}
-    gap={[10, 6, 6, 6]}
-    marginLeft={[10, 0, 0, 0]}
+    gap={[10, 10, 6, 6]}
+    marginLeft={[10, 10, 0, 0]}
     marginRight={[10, 0, 0, 0]}
     marginBottom={6}
   >
@@ -27,5 +27,3 @@ const TechBoxList: React.FC = () => (
     <TechBox name="MongoDB" url="mongodb" />
   </Grid>
 );
-
-export default TechBoxList;

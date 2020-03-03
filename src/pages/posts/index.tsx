@@ -16,6 +16,7 @@ import Moment from 'react-moment';
 
 import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
+import { ShareButton } from '../../components/molecules/ShareButton';
 
 import { axiosInstance } from '../../lib/api';
 import { markedOption } from '../../lib/marked';
@@ -102,6 +103,10 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
             </React.Fragment>
           ))}
         </Grid>
+        <ShareButton
+          title={'りゅーそうブログ一覧ページ'}
+          url={`https://ryusou-mtkh.now.sh/posts/`}
+        />
       </Layout>
     </>
   );

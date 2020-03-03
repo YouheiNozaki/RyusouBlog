@@ -15,6 +15,7 @@ import {
 
 import Layout from '../components/templates/Layout';
 import HeadComponent from '../components/templates/Head';
+import { ShareButton } from '../components/molecules/ShareButton';
 
 const WorkPage: React.FC = () => (
   <>
@@ -57,6 +58,10 @@ const WorkPage: React.FC = () => (
           </TabPanel>
         </TabPanels>
       </Tabs>
+      <ShareButton
+        title={'りゅーそうブログのProduct一覧ページ'}
+        url={`https://ryusou-mtkh.now.sh/work`}
+      />
     </Layout>
   </>
 );

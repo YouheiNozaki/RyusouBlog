@@ -2,14 +2,6 @@ import * as React from 'react';
 import { NextPage } from 'next';
 import Moment from 'react-moment';
 import Highlight from 'react-highlight';
-import {
-  LineIcon,
-  LineShareButton,
-  TwitterIcon,
-  TwitterShareButton,
-  FacebookIcon,
-  FacebookShareButton,
-} from 'react-share';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
@@ -19,6 +11,7 @@ import { Post } from '../../types';
 
 import Layout from '../../components/templates/Layout';
 import HeadComponent from '../../components/templates/Head';
+import { ShareButton } from '../../components/molecules/ShareButton';
 
 type Props = {
   post: Post;
@@ -63,47 +56,10 @@ const PostContent: NextPage<Props> = ({ post }) => {
             </Highlight>
           </Box>
         </Flex>
-        <Flex
-          margin={6}
-          justify-content={'right'}
-          position="fixed"
-          left={2}
-          bottom={2}
-        >
-          <Box margin={2}>
-            <TwitterShareButton
-              title={post.title}
-              via="ryusou_mtkh"
-              url={`https://ryusou-mtkh.now.sh/posts/${post.id}`}
-              hashtags={['RyusouBlog']}
-            >
-              <HeadComponent
-                title={post.title}
-                description={post.title}
-                keyword={post.title}
-                image={post.image.url}
-                url={`https://ryusou-blog.now.sh/posts/${post.id}`}
-              />
-              <TwitterIcon size={32} round />
-            </TwitterShareButton>
-          </Box>
-          <Box margin={2}>
-            <FacebookShareButton
-              quote={post.title}
-              url={`https://ryusou-blog.now.sh/posts/${post.id}`}
-            >
-              <FacebookIcon size={32} round />
-            </FacebookShareButton>
-          </Box>
-          <Box margin={2}>
-            <LineShareButton
-              title={post.title}
-              url={`https://ryusou-blog.now.sh/posts/${post.id}`}
-            >
-              <LineIcon size={32} round />
-            </LineShareButton>
-          </Box>
-        </Flex>
+        <ShareButton
+          title={post.title}
+          url={`https://ryusou-mtkh.now.sh/posts/${post.id}`}
+        />
       </Layout>
     </React.Fragment>
   );

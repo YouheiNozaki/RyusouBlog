@@ -15,6 +15,7 @@ import {
 
 import HeadComponent from '../components/templates/Head';
 import Layout from '../components/templates/Layout';
+import { ShareButton } from '../components/molecules/ShareButton';
 
 import { axiosPostInstance } from '../lib/api';
 import { FormData } from '../types';
@@ -27,6 +28,7 @@ const ContactPage: React.FC = () => {
   function onSubmit(values: FormData) {
     axiosPostInstance({
       data: values,
+      url: 'https://ryusou-mtkh.microcms.io/api/v1/contacts',
     })
       .then(() => {
         router.push('/success');
@@ -101,6 +103,10 @@ const ContactPage: React.FC = () => {
             Submit
           </Button>
         </form>
+        <ShareButton
+          title={'りゅーそうブログコンタクトページ'}
+          url={`https://ryusou-mtkh.now.sh/contact/`}
+        />
       </Layout>
     </>
   );

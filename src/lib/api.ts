@@ -10,7 +10,6 @@ export const axiosInstance = axios.create({
 
 export const axiosPostInstance = axios.create({
   method: 'post',
-  url: 'https://ryusou-mtkh.microcms.io/api/v1/contacts',
   headers: {
     'Content-Type': 'application/json',
     'X-WRITE-API-KEY': process.env.x_api_key,
