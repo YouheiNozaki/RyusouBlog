@@ -16,14 +16,14 @@ export const TechBoxList: React.FC = () => (
     marginRight={[10, 0, 0, 0]}
     marginBottom={6}
   >
-    <TechBox name="HTML5" url="html" />
-    <TechBox name="CSS3" url="css" />
-    <TechBox name="JavaScript" url="javascript" />
-    <TechBox name="TypeScript" url="typescript" />
-    <TechBox name="Node.js" url="nodejs" />
-    <TechBox name="React" url="react" />
-    <TechBox name="Redux" url="redux" />
-    <TechBox name="PostgreSQL" url="postgresql" />
-    <TechBox name="MongoDB" url="mongodb" />
+    <TechBox name="HTML5" url="html" alt="HTML5" />
+    <TechBox name="CSS3" url="css" alt="CSS3" />
+    <TechBox name="JavaScript" url="javascript" alt="javascript" />
+    <TechBox name="TypeScript" url="typescript" alt="typescript" />
+    <TechBox name="Node.js" url="nodejs" alt="node.js" />
+    <TechBox name="React" url="react" alt="react" />
+    <TechBox name="Redux" url="redux" alt="redux" />
+    <TechBox name="PostgreSQL" url="postgresql" alt="postgreSQL" />
+    <TechBox name="MongoDB" url="mongodb" alt="mongodb" />
   </Grid>
 );

@@ -4,6 +4,7 @@ import { Box, Text, Image } from '@chakra-ui/core';
 type Props = {
   name: string;
   url: string;
+  alt: string;
 };
 
 const TechBox: React.FC<Props> = props => (
@@ -17,7 +18,12 @@ const TechBox: React.FC<Props> = props => (
     >
       {props.name}
     </Text>
-    <Image src={`/${props.url}.png`} margin="0 auto" marginBottom="2" />
+    <Image
+      src={`/${props.url}.png`}
+      alt={props.alt}
+      margin="0 auto"
+      marginBottom="2"
+    />
   </Box>
 );
 
