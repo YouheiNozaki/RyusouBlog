@@ -51,57 +51,53 @@ const ContactPage: React.FC = () => {
         <Heading>Contact</Heading>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl isRequired margin="6">
-            <FormLabel htmlFor="FirstName">
-              First Name
-              <Input
-                type="text"
-                placeholder="First name"
-                name="firstName"
-                ref={register({ required: true, maxLength: 80 })}
-                marginBottom="4"
-              />
-            </FormLabel>
+            <FormLabel htmlFor="FirstName">First Name</FormLabel>
+            <Input
+              type="text"
+              placeholder="First name"
+              id="FirstName"
+              name="firstName"
+              ref={register({ required: true, maxLength: 80 })}
+              marginBottom="4"
+            />
             <FormErrorMessage>
               {errors.firstName && errors.firstName.message}
             </FormErrorMessage>
-            <FormLabel htmlFor="LastName">
-              Last Name
-              <Input
-                type="text"
-                placeholder="Last name"
-                name="lastName"
-                ref={register({ required: true, maxLength: 100 })}
-                marginBottom="4"
-              />
-            </FormLabel>
+            <FormLabel htmlFor="LastName">Last Name</FormLabel>
+            <Input
+              type="text"
+              placeholder="Last name"
+              id="LastName"
+              name="lastName"
+              ref={register({ required: true, maxLength: 100 })}
+              marginBottom="4"
+            />
             <FormErrorMessage>
               {errors.lastName && errors.lastName.message}
             </FormErrorMessage>
-            <FormLabel htmlFor="LastName">
-              Your Email
-              <Input
-                type="email"
-                placeholder="Email"
-                name="email"
-                aria-describedby="email-helper-text"
-                ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-              />
-            </FormLabel>
+            <FormLabel htmlFor="Email">Your Email</FormLabel>
+            <Input
+              type="email"
+              placeholder="Email"
+              id="Email"
+              name="email"
+              aria-describedby="email-helper-text"
+              ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+            />
             <FormErrorMessage>
               {errors.email && errors.email.message}
             </FormErrorMessage>
             <FormHelperText id="email-helper-text" marginBottom="4">
               We'll never share your email address.
             </FormHelperText>
-            <FormLabel htmlFor="Inquiry">
-              Inquiry
-              <Textarea
-                type="text"
-                placeholder="body"
-                name="body"
-                ref={register({ required: true })}
-              />
-            </FormLabel>
+            <FormLabel htmlFor="Inquiry">Inquiry</FormLabel>
+            <Textarea
+              type="text"
+              placeholder="body"
+              id="Inquiry"
+              name="body"
+              ref={register({ required: true })}
+            />
             <FormErrorMessage>
               {errors.body && errors.body.message}
             </FormErrorMessage>

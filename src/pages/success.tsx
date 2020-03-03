@@ -22,6 +22,7 @@ const SuccessPage: React.FC = () => (
           width={[56, 56, 56, 56]}
           height={[64, 64, 64, 64]}
           position="absolute"
+          alt="お問い合わせありがとうございます"
         />
         <Image
           src="/ryusou2.png"
@@ -30,6 +31,7 @@ const SuccessPage: React.FC = () => (
           position="relative"
           left="24"
           top="24"
+          alt="りゅーそうくん（ネコ)の画像"
         />
       </Flex>
       <ShareButton

@@ -19,13 +19,13 @@ const Footer: React.FC = () => (
       <Flex marginBottom="6">
         <ChakraLink
           href="https://twitter.com/ryusou_mtkh"
-          alt="りゅーそうのTwitterアカウントへのリンク"
+          alt="このTwitterアイコンの画像をクリックするとりゅーそうのTwitterアカウントへリンクします"
         >
           <FaTwitter size="32" />
         </ChakraLink>
         <ChakraLink
           href="https://github.com/YouheiNozaki"
-          alt="りゅーそうのGitHubアカウントへのリンク"
+          alt="このGitHubアイコンの画像をクリックするとりゅーそうのGitHubアカウントへリンクします"
           marginLeft="4"
         >
           <FaGithub size="32" />
