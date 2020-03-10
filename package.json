@@ -32,9 +32,9 @@
     "emotion-theming": "^10.0.27",
     "marked": "^0.8.0",
     "moment": "^2.24.0",
-    "next": "^9.2.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-highlight": "^0.12.0",
     "react-hook-form": "^4.9.6",
     "react-moment": "^0.9.7"

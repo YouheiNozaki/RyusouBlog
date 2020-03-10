@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { withTheme } from 'emotion-theming';
 import {
@@ -112,12 +112,12 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
   );
 };
 
-PostsPage.getInitialProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const res = await axiosInstance.get(
     `https://ryusou-mtkh.microcms.io/api/v1/posts/`,
   );
   const data: Post[] = await res.data.contents;
-  return { posts: data };
+  return { props: { posts: data } };
 };
 
 export default withTheme(PostsPage);

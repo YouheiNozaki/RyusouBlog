@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import { useRouter } from 'next/router';
 import Moment from 'react-moment';
 import Highlight from 'react-highlight';
 import { withTheme } from 'emotion-theming';
@@ -18,6 +19,11 @@ type Props = {
 };
 
 const PostContent: NextPage<Props> = ({ post }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <React.Fragment>
       <HeadComponent
@@ -65,13 +71,24 @@ const PostContent: NextPage<Props> = ({ post }) => {
   );
 };
 
-PostContent.getInitialProps = async context => {
-  const { id } = context.query;
-  const res = await axiosInstance.get(
-    `https://ryusou-mtkh.microcms.io/api/v1/posts/${id}`,
-  );
+export const getStaticPath: GetStaticPaths = async () => {
+  const res = await axiosInstance.get(`https://ryusou-mtkh.now.sh/posts/`);
+  const posts = await res.data;
+  const paths = posts.map((post: { id: string }) => `/posts/${post.id}`);
+  return {
+    paths,
+    fallback: true,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  if (typeof params === 'undefined') {
+    throw new Error();
+  }
+  const id = params.id;
+  const res = await axiosInstance.get(`https://ryusou-mtkh.now.sh/posts/${id}`);
   const post: Post = await res.data;
-  return { post };
+  return { props: { post } };
 };
 
 export default withTheme(PostContent);
