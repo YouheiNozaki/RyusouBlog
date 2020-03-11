@@ -18,9 +18,10 @@ import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
 import { ShareButton } from '../../components/molecules/ShareButton';
 
-import { axiosInstance } from '../../lib/api';
+import { apiGet } from '../../lib/api';
 import { markedOption } from '../../lib/marked';
 import { Post } from '../../types';
+import { MICROCMS_POSTS_PORT } from '../../constants';
 
 type Props = {
   posts: Post[];
@@ -34,15 +35,15 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
         description={'Ryusouのブログ一覧ページ'}
         keyword={'BLOG'}
         image={'./hero.png'}
-        url={'https://ryusou-blog.now.sh/posts'}
+        url={`https://ryusou-blog.now.sh/posts`}
       />
       <Layout>
         <Heading margin="5">Ryusou Tech Blog</Heading>
         <Grid display={{ sm: 'grid' }} templateColumns="repeat(2, 1fr)" gap={4}>
           {posts.map(post => (
             <React.Fragment key={post.id}>
-              <Link href={`posts/${post.id}`}>
-                <ChakraLink href={`posts/${post.id}`}>
+              <Link href="posts/[id]" as={`posts/${post.id}`}>
+                <ChakraLink>
                   <Box
                     p={[2, 4, 4, 4]}
                     width={['xs', 'sm', 'sm', 'sm']}
@@ -74,7 +75,6 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                             <Tag
                               variantColor="gray"
                               color="gray.900"
-                              // width={32}
                               marginLeft={1}
                             >
                               {tag.name}
@@ -113,10 +113,8 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await axiosInstance.get(
-    `https://ryusou-mtkh.microcms.io/api/v1/posts/`,
-  );
-  const data: Post[] = await res.data.contents;
+  const res = await apiGet(MICROCMS_POSTS_PORT);
+  const data = await res.data.contents;
   return { props: { posts: data } };
 };
 

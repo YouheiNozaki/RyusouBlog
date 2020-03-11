@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
-import { useRouter } from 'next/router';
 import Moment from 'react-moment';
 import Highlight from 'react-highlight';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
-import { axiosInstance } from '../../lib/api';
+import { apiGet, axiosInstance } from '../../lib/api';
 import { markedOption, markedRender } from '../../lib/marked';
 import { Post } from '../../types';
+import { MICROCMS_POSTS_PORT } from '../../constants';
 
 import Layout from '../../components/templates/Layout';
 import HeadComponent from '../../components/templates/Head';
@@ -19,11 +19,6 @@ type Props = {
 };
 
 const PostContent: NextPage<Props> = ({ post }) => {
-  const router = useRouter();
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <React.Fragment>
       <HeadComponent
@@ -72,22 +67,25 @@ const PostContent: NextPage<Props> = ({ post }) => {
 };
 
 export const getStaticPath: GetStaticPaths = async () => {
-  const res = await axiosInstance.get(`https://ryusou-mtkh.now.sh/posts/`);
-  const posts = await res.data;
-  const paths = posts.map((post: { id: string }) => `/posts/${post.id}`);
+  const res = await apiGet(MICROCMS_POSTS_PORT);
+  const posts = await res.data.contents;
+  const paths = posts.map(post => ({
+    params: { id: post.id },
+  }));
+
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (typeof params === 'undefined') {
+  if (params === undefined) {
     throw new Error();
   }
   const id = params.id;
-  const res = await axiosInstance.get(`https://ryusou-mtkh.now.sh/posts/${id}`);
-  const post: Post = await res.data;
+  const res = await axiosInstance.get(MICROCMS_POSTS_PORT + id);
+  const post = await res.data.contents;
   return { props: { post } };
 };
 
