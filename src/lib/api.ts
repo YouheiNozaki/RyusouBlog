@@ -18,8 +18,8 @@ export const axiosPostInstance = axios.create({
 });
 
 export function apiGet<T extends keyof GET>(
-  path: T,
+  url: T,
   config?: AxiosRequestConfig,
 ) {
-  return axiosInstance.get<GET[T]['res']>(path, config);
+  return axiosInstance.get<GET[T]['res']>(url, config);
 }

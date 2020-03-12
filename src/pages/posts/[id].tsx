@@ -66,27 +66,25 @@ const PostContent: NextPage<Props> = ({ post }) => {
   );
 };
 
-export const getStaticPath: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const res = await apiGet(MICROCMS_POSTS_PORT);
   const posts = await res.data.contents;
-  const paths = posts.map(post => ({
-    params: { id: post.id },
-  }));
-
+  const paths = posts.map(post => `posts/${post.id}`);
+  console.log(paths);
   return {
     paths,
     fallback: false,
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (params === undefined) {
+export const getStaticProps: GetStaticProps = async context => {
+  if (typeof context.params === 'undefined') {
     throw new Error();
   }
-  const id = params.id;
-  const res = await axiosInstance.get(MICROCMS_POSTS_PORT + id);
+  const id = context.params.id;
+  const res = await axiosInstance.get(MICROCMS_POSTS_PORT + '/posts/' + id);
   const post = await res.data.contents;
-  return { props: { post } };
+  return { props: { post: post } };
 };
 
 export default withTheme(PostContent);

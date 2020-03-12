@@ -16,6 +16,7 @@ module.exports = {
         'X-API-KEY': process.env.API_KEY,
       },
     };
+
     const res = await axios.get(
       `https://ryusou-mtkh.microcms.io/api/v1/posts/`,
       key,

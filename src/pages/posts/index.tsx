@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextPage, GetStaticProps } from 'next';
+import { NextPage } from 'next';
 import Link from 'next/link';
 import { withTheme } from 'emotion-theming';
 import {
@@ -42,7 +42,7 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
         <Grid display={{ sm: 'grid' }} templateColumns="repeat(2, 1fr)" gap={4}>
           {posts.map(post => (
             <React.Fragment key={post.id}>
-              <Link href="posts/[id]" as={`posts/${post.id}`}>
+              <Link href="/posts/[id]" as={`/posts/${post.id}`} passHref>
                 <ChakraLink>
                   <Box
                     p={[2, 4, 4, 4]}
@@ -112,10 +112,10 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export async function getStaticProps() {
   const res = await apiGet(MICROCMS_POSTS_PORT);
-  const data = await res.data.contents;
-  return { props: { posts: data } };
-};
+  const posts = await res.data.contents;
+  return { props: { posts } };
+}
 
 export default withTheme(PostsPage);
