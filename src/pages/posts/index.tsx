@@ -112,10 +112,10 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
   );
 };
 
-export async function getStaticProps() {
+PostsPage.getInitialProps = async () => {
   const res = await apiGet(MICROCMS_POSTS_PORT);
-  const posts = await res.data.contents;
-  return { props: { posts } };
-}
+  const data = await res.data.contents;
+  return { posts: data };
+};
 
 export default withTheme(PostsPage);
