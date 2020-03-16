@@ -7,8 +7,9 @@ import Document, {
 } from 'next/document';
 
 export default class MyDocument extends Document {
-  static getInitialProps(ctx: DocumentContext) {
-    return Document.getInitialProps(ctx);
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
   render() {
     return (
@@ -21,10 +22,6 @@ export default class MyDocument extends Document {
           />
           <link rel="shortcut icon" href={'/mainLogo.png'} />
           <link rel="apple-touch-icon" href={'/mainLogo.png'} />
-          <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css"
-            rel="stylesheet"
-          />
           <meta
             name="description"
             content="りゅーそうブログでは、教員でもあるりゅーそうがプログラミングの技術について紹介しています。"

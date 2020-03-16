@@ -19,7 +19,7 @@ import Layout from '../../components/templates/Layout';
 import { ShareButton } from '../../components/molecules/ShareButton';
 
 import { apiGet } from '../../lib/api';
-import { markedOption } from '../../lib/marked';
+import { renderHtmlAst } from '../../lib/renderAst';
 import { Post } from '../../types';
 import { MICROCMS_POSTS_PORT } from '../../constants';
 
@@ -86,16 +86,15 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                         <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
                       </Text>
                       <Text
-                        dangerouslySetInnerHTML={{
-                          __html: `${markedOption(post.content)}`,
-                        }}
                         color="gray.500"
                         isTruncated
                         lineHeight="tight"
                         maxHeight="24"
                         margin={2}
                         order={5}
-                      ></Text>
+                      >
+                        {renderHtmlAst(post.content)}
+                      </Text>
                     </Flex>
                   </Box>
                 </ChakraLink>

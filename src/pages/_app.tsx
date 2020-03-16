@@ -3,7 +3,6 @@ import { AppProps } from 'next/app';
 import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 
 import theme from '../theme';
-import '../styles/post.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
