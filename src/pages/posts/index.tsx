@@ -19,7 +19,6 @@ import Layout from '../../components/templates/Layout';
 import { ShareButton } from '../../components/molecules/ShareButton';
 
 import { apiGet } from '../../lib/api';
-import { renderHtmlAst } from '../../lib/renderAst';
 import { Post } from '../../types';
 import { MICROCMS_POSTS_PORT } from '../../constants';
 
@@ -93,7 +92,11 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
                         margin={2}
                         order={5}
                       >
-                        {renderHtmlAst(post.content)}
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: `${post.content}`,
+                          }}
+                        ></div>
                       </Text>
                     </Flex>
                   </Box>
