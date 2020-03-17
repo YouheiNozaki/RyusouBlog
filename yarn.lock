@@ -1221,6 +1221,13 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/rehype-react@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/rehype-react/-/rehype-react-4.0.0.tgz#55b71cc7329b6effb8f66b8ea08c2d016680db97"
+  integrity sha512-t4fsoAYXRGGUTWesgb+eLdTEjGdFy4d5Cmz9ct2XwgUkmsAns6si9jkQ/FOrxMB/SUQ9ax0ZkKgXmHeIM7XkKg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/styled-system@5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.0.1.tgz#b0af58267e06c5ea18fbe6977fcc5347a56cc847"
