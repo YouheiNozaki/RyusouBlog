@@ -12,21 +12,25 @@ export const markedRender = function() {
   renderer.heading = function(text, level) {
     const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
     return `
-    <h${level} class="author" href="#${escapedText}">
-    ${text}
-    </h${level}>
+      <h${level} class="author" href="#${escapedText}">
+        ${text}
+      </h${level}>
     `;
   };
   renderer.link = function(href, title, text) {
     return `
-    <a class="contentLink" href=${href} title=${title}>${text}</a>
+      <a class="contentLink" href=${href} title=${title}>${text}</a>
     `;
   };
   renderer.paragraph = function(text) {
     return `
-    <p class="paragraph">${text}</p>
+      <p class="paragraph">${text}</p>
     `;
   };
-
+  // renderer.code = function(code, language) {
+  //   return `
+  //     <code class=""
+  //   `;
+  // };
   return renderer;
 };

@@ -22,11 +22,6 @@ export default class MyDocument extends Document {
           />
           <link rel="shortcut icon" href={'/mainLogo.png'} />
           <link rel="apple-touch-icon" href={'/mainLogo.png'} />
-          // hightlight.jsのテーマを設定する
-          <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css"
-            rel="stylesheet"
-          />
           <meta
             name="description"
             content="りゅーそうブログでは、教員でもあるりゅーそうがプログラミングの技術について紹介しています。"

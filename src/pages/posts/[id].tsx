@@ -2,13 +2,11 @@ import React from 'react';
 import { NextPage } from 'next';
 
 import Moment from 'react-moment';
-import Highlight from 'react-highlight';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
 import { axiosInstance } from '../../lib/api';
-import { markedOption, markedRender } from '../../lib/marked';
-import { renderMarkdown } from '../../lib/renderAst';
+import { renderMarkdown } from '../../lib/renderMarkdown';
 import { Post } from '../../types';
 
 import Layout from '../../components/templates/Layout';
@@ -52,13 +50,7 @@ const PostContent: NextPage<Props> = ({ post }) => {
             margin={4}
             marginBottom={[10, 20, 20, 20]}
           />
-          <Box margin={8}>
-            <Highlight innerHTML={true}>
-              {markedOption(renderMarkdown(post.content), {
-                renderer: markedRender(),
-              })}
-            </Highlight>
-          </Box>
+          <Box margin={8}>{renderMarkdown(post.content)}</Box>
         </Flex>
         <ShareButton
           title={post.title}
