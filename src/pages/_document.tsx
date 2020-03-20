@@ -20,16 +20,15 @@ export default class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+          <meta
+            name="description"
+            content="りゅーそうブログでは、教員でもあるりゅーそうがプログラミングの技術について紹介しています。"
+          />
           <link rel="shortcut icon" href={'/mainLogo.png'} />
           <link rel="apple-touch-icon" href={'/mainLogo.png'} />
           <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-cave-dark.min.css"
-          />
-          >
-          <meta
-            name="description"
-            content="りゅーそうブログでは、教員でもあるりゅーそうがプログラミングの技術について紹介しています。"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-light.min.css"
           />
         </Head>
         <body>
