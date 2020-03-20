@@ -2,7 +2,7 @@ import * as React from 'react';
 import Head from 'next/head';
 import { withTheme } from 'emotion-theming';
 
-import { HeadType } from '../../types';
+import { HeadType } from '../../types/index';
 
 const HeadComponent: React.FC<HeadType> = ({
   title,

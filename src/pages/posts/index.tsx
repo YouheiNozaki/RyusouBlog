@@ -19,7 +19,7 @@ import Layout from '../../components/templates/Layout';
 import { ShareButton } from '../../components/molecules/ShareButton';
 
 import { apiGet } from '../../lib/api';
-import { Post } from '../../types';
+import { Post } from '../../types/index';
 import { MICROCMS_POSTS_PORT } from '../../constants';
 
 type Props = {

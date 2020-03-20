@@ -18,7 +18,7 @@ import Layout from '../components/templates/Layout';
 import { ShareButton } from '../components/molecules/ShareButton';
 
 import { axiosPostInstance } from '../lib/api';
-import { FormData } from '../types';
+import { FormData } from '../types/index';
 
 const ContactPage: React.FC = () => {
   const router = useRouter();
