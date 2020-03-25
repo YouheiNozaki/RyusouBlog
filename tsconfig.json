@@ -5,6 +5,7 @@
     "lib": ["dom", "esnext"],
     "jsx": "preserve",
     "allowJs": true,
+    "alwaysStrict": true,
     "noEmit": true,
     "strict": true,
     "noUnusedLocals": true,

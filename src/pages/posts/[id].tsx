@@ -1,15 +1,16 @@
 import React from 'react';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 
 import Moment from 'react-moment';
 import Highlight from 'react-highlight';
+import fetch from 'isomorphic-unfetch';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
-import { axiosInstance } from '../../lib/api';
 import { renderMarkdown } from '../../lib/renderMarkdown';
 import { markedOption, markedRender } from '../../lib/marked';
 import { Post } from '../../types/index';
+import { MICROCMS_ENDPOINT } from '../../constants';
 
 import Layout from '../../components/templates/Layout';
 import HeadComponent from '../../components/templates/Head';
@@ -69,13 +70,41 @@ const PostContent: NextPage<Props> = ({ post }) => {
   );
 };
 
-PostContent.getInitialProps = async context => {
-  const { id } = context.query;
-  const res = await axiosInstance.get(
-    `https://ryusou-mtkh.microcms.io/api/v1/posts/${id}`,
-  );
-  const post: Post = await res.data;
-  return { post };
+export const getStaticPath: GetStaticPaths = async () => {
+  const res = await fetch(MICROCMS_ENDPOINT + '/posts', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-API-KEY': `${process.env.API_KEY}`,
+    },
+  });
+  const posts = await res.json();
+
+  const paths = posts.contents.map((post: { id: any }) => `/posts/${post.id}`);
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  try {
+    if (typeof params === 'undefined') {
+      throw new Error('このコンテンツは見つかりません');
+    }
+    const id = params.id;
+    const res = await fetch(MICROCMS_ENDPOINT + '/posts/' + id, {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-KEY': `${process.env.api_key}`,
+      },
+    });
+    const post = await res.json();
+    return {
+      props: {
+        post: post,
+      },
+    };
+  } catch (err) {
+    return { props: { errors: err.message } };
+  }
 };
 
 export default withTheme(PostContent);

@@ -12,13 +12,14 @@ import {
   Textarea,
   Button,
 } from '@chakra-ui/core';
+import fetch from 'isomorphic-unfetch';
 
 import HeadComponent from '../components/templates/Head';
 import Layout from '../components/templates/Layout';
 import { ShareButton } from '../components/molecules/ShareButton';
 
-import { axiosPostInstance } from '../lib/api';
 import { FormData } from '../types/index';
+import { MICROCMS_ENDPOINT } from '../constants';
 
 const ContactPage: React.FC = () => {
   const router = useRouter();
@@ -26,9 +27,13 @@ const ContactPage: React.FC = () => {
   const { register, handleSubmit, errors } = useForm<FormData>();
 
   function onSubmit(values: FormData) {
-    axiosPostInstance({
-      data: values,
-      url: 'https://ryusou-mtkh.microcms.io/api/v1/contacts',
+    fetch(MICROCMS_ENDPOINT + '/contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WRITE-API-KEY': `${process.env.x_api_key}`,
+      },
+      body: JSON.stringify(`${values}`),
     })
       .then(() => {
         router.push('/success');

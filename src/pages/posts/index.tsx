@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { withTheme } from 'emotion-theming';
 import {
@@ -13,14 +13,14 @@ import {
   Flex,
 } from '@chakra-ui/core';
 import Moment from 'react-moment';
+import fetch from 'isomorphic-unfetch';
 
 import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
 import { ShareButton } from '../../components/molecules/ShareButton';
 
-import { apiGet } from '../../lib/api';
 import { Post } from '../../types/index';
-import { MICROCMS_POSTS_PORT } from '../../constants';
+import { MICROCMS_ENDPOINT } from '../../constants';
 
 type Props = {
   posts: Post[];
@@ -41,7 +41,7 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
         <Grid display={{ sm: 'grid' }} templateColumns="repeat(2, 1fr)" gap={4}>
           {posts.map(post => (
             <React.Fragment key={post.id}>
-              <Link href="/posts/[id]" as={`/posts/${post.id}`} passHref>
+              <Link href="/posts/[id]" as={`posts/${post.id}`}>
                 <ChakraLink>
                   <Box
                     p={[2, 4, 4, 4]}
@@ -114,10 +114,16 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
   );
 };
 
-PostsPage.getInitialProps = async () => {
-  const res = await apiGet(MICROCMS_POSTS_PORT);
-  const data = await res.data.contents;
-  return { posts: data };
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch(MICROCMS_ENDPOINT + '/posts', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-API-KEY': `${process.env.api_key}`,
+    },
+  });
+  const data = await res.json();
+  return { props: { posts: data.contents } };
 };
 
 export default withTheme(PostsPage);
