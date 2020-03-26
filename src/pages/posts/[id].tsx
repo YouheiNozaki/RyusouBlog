@@ -1,15 +1,15 @@
 import React from 'react';
-import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 import Moment from 'react-moment';
 import Highlight from 'react-highlight';
-import fetch from 'isomorphic-unfetch';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
+import { fetchAPI } from '../../lib/fetch';
 import { renderMarkdown } from '../../lib/renderMarkdown';
 import { markedOption, markedRender } from '../../lib/marked';
-import { Post } from '../../types/index';
+import { Post, PostsSchema } from '../../types/index';
 import { MICROCMS_ENDPOINT } from '../../constants';
 
 import Layout from '../../components/templates/Layout';
@@ -20,7 +20,7 @@ type Props = {
   post: Post;
 };
 
-const PostContent: NextPage<Props> = ({ post }) => {
+const PostContent: React.FC<Props> = ({ post }) => {
   return (
     <React.Fragment>
       <HeadComponent
@@ -71,26 +71,27 @@ const PostContent: NextPage<Props> = ({ post }) => {
 };
 
 export const getStaticPath: GetStaticPaths = async () => {
-  const res = await fetch(MICROCMS_ENDPOINT + '/posts', {
+  const res = await fetchAPI(MICROCMS_ENDPOINT + '/posts', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'X-API-KEY': `${process.env.API_KEY}`,
+      'X-API-KEY': `${process.env.api_key}`,
     },
   });
   const posts = await res.json();
 
-  const paths = posts.contents.map((post: { id: any }) => `/posts/${post.id}`);
+  const paths = posts.contents.map(post => `/posts/${post.id}`);
+
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async context => {
+  if (!context.params) {
+    return { props: { errors: 'Ops no parameters was given' } };
+  }
   try {
-    if (typeof params === 'undefined') {
-      throw new Error('このコンテンツは見つかりません');
-    }
-    const id = params.id;
-    const res = await fetch(MICROCMS_ENDPOINT + '/posts/' + id, {
+    const id = context.params.id;
+    const res = await fetchAPI(MICROCMS_ENDPOINT + '/posts/' + id, {
       headers: {
         'Content-Type': 'application/json',
         'X-API-KEY': `${process.env.api_key}`,

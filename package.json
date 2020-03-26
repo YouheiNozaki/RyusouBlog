@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/isomorphic-fetch": "^0.0.35",
     "@types/marked": "^0.7.3",
     "@types/node": "^13.9.0",
     "@types/react": "^16.9.23",
@@ -35,7 +34,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "marked": "^0.8.0",
     "moment": "^2.24.0",
-    "next": "^9.3.0",
+    "next": "^9.3.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-highlight": "^0.12.0",
