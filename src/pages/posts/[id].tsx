@@ -1,15 +1,16 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
+// import fetch from 'isomorphic-unfetch';
 import Moment from 'react-moment';
 import Highlight from 'react-highlight';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
-import { fetchAPI } from '../../lib/fetch';
+import { get } from '../../lib/fetch';
 import { renderMarkdown } from '../../lib/renderMarkdown';
 import { markedOption, markedRender } from '../../lib/marked';
-import { Post, PostsSchema } from '../../types/index';
+import { Post } from '../../types/index';
 import { MICROCMS_ENDPOINT } from '../../constants';
 
 import Layout from '../../components/templates/Layout';
@@ -71,16 +72,17 @@ const PostContent: React.FC<Props> = ({ post }) => {
 };
 
 export const getStaticPath: GetStaticPaths = async () => {
-  const res = await fetchAPI(MICROCMS_ENDPOINT + '/posts', {
+  const response = await get<Post[]>(MICROCMS_ENDPOINT + '/posts', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       'X-API-KEY': `${process.env.api_key}`,
     },
   });
-  const posts = await res.json();
-
-  const paths = posts.contents.map(post => `/posts/${post.id}`);
+  if (typeof response.parsedBody === 'undefined') {
+    throw new Error(response.statusText);
+  }
+  const paths = response.parsedBody.map(post => `/posts/${post.id}`);
 
   return { paths, fallback: false };
 };
@@ -91,7 +93,7 @@ export const getStaticProps: GetStaticProps = async context => {
   }
   try {
     const id = context.params.id;
-    const res = await fetchAPI(MICROCMS_ENDPOINT + '/posts/' + id, {
+    const res = await get(MICROCMS_ENDPOINT + '/posts/' + id, {
       headers: {
         'Content-Type': 'application/json',
         'X-API-KEY': `${process.env.api_key}`,
@@ -100,7 +102,7 @@ export const getStaticProps: GetStaticProps = async context => {
     const post = await res.json();
     return {
       props: {
-        post: post,
+        post,
       },
     };
   } catch (err) {
