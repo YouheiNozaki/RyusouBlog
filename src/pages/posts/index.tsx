@@ -14,8 +14,7 @@ import {
 } from '@chakra-ui/core';
 import Moment from 'react-moment';
 
-// import fetch from 'isomorphic-unfetch';
-import { get } from '../../lib/fetch';
+import fetch from 'isomorphic-unfetch';
 
 import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
@@ -117,13 +116,14 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await get<Post[]>(MICROCMS_ENDPOINT + '/posts', {
+  const res = await fetch(MICROCMS_ENDPOINT + '/posts', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       'X-API-KEY': `${process.env.api_key}`,
     },
   });
+
   const data = await res.json();
   return { props: { posts: data.contents } };
 };
