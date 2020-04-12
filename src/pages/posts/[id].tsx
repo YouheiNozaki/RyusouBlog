@@ -1,13 +1,12 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
-// import fetch from 'isomorphic-unfetch';
 import Moment from 'react-moment';
 import Highlight from 'react-highlight';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
-import { get } from '../../lib/fetch';
+import { http } from '../../lib/fetch';
 import { renderMarkdown } from '../../lib/renderMarkdown';
 import { markedOption, markedRender } from '../../lib/marked';
 import { Post } from '../../types/index';
@@ -72,17 +71,17 @@ const PostContent: React.FC<Props> = ({ post }) => {
 };
 
 export const getStaticPath: GetStaticPaths = async () => {
-  const response = await get<Post[]>(MICROCMS_ENDPOINT + '/posts', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-API-KEY': `${process.env.api_key}`,
-    },
-  });
-  if (typeof response.parsedBody === 'undefined') {
-    throw new Error(response.statusText);
-  }
-  const paths = response.parsedBody.map(post => `/posts/${post.id}`);
+  const response = await http<Post[]>(
+    new Request(MICROCMS_ENDPOINT + '/posts', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-KEY': `${process.env.api_key}`,
+      },
+    }),
+  );
+
+  const paths = response.map(post => `/posts/${post.id}`);
 
   return { paths, fallback: false };
 };
@@ -93,12 +92,14 @@ export const getStaticProps: GetStaticProps = async context => {
   }
   try {
     const id = context.params.id;
-    const res = await get(MICROCMS_ENDPOINT + '/posts/' + id, {
-      headers: {
-        'Content-Type': 'application/json',
-        'X-API-KEY': `${process.env.api_key}`,
-      },
-    });
+    const res = await http<any>(
+      new Request(MICROCMS_ENDPOINT + '/posts/' + id, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-KEY': `${process.env.api_key}`,
+        },
+      }),
+    );
     const post = await res.json();
     return {
       props: {
