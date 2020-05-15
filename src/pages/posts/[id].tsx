@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 
 import Moment from 'react-moment';
 import Highlight from 'react-highlight';
@@ -19,7 +19,7 @@ type Props = {
   post: Post;
 };
 
-const PostContent: React.FC<Props> = ({ post }) => {
+const PostContent: NextPage<Props> = ({ post }) => {
   return (
     <React.Fragment>
       <HeadComponent
@@ -77,20 +77,22 @@ export const getStaticPath: GetStaticPaths = async () => {
       'X-API-KEY': `${process.env.API_KEY}`,
     },
   });
-  const posts = await res.json();
 
   // Todo：anyを消す
-  const paths = posts.contents.map(
-    (post: { id: string }) => `posts/${post.id}`,
-  );
+  const posts = await res.json();
+
+  const paths = posts.contents.map((post: { id: string }) => {
+    `posts/${post.id}`;
+  });
+
   return {
     paths,
     fallback: false,
   };
 };
 
-export const getStaticProps: GetStaticProps = async context => {
-  const id = context?.params?.id;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const id = params?.id;
 
   const res = await fetch(`${MICROCMS_ENDPOINT}` + '/posts/' + id, {
     method: 'GET',

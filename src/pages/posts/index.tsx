@@ -31,7 +31,7 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
         <Grid display={{ sm: 'grid' }} templateColumns="repeat(2, 1fr)" gap={4}>
           {posts.map(post => (
             <React.Fragment key={post.id}>
-              <Link href="/posts/[id]" as={`posts/${post.id}`}>
+              <Link href={`/posts/${post.id}`} as={`posts/${post.id}`}>
                 <Box
                   p={[2, 4, 4, 4]}
                   width={['xs', 'sm', 'sm', 'sm']}

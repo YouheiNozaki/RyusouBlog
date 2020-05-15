@@ -20,5 +20,11 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "src/theme/*.js"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "src/theme/*.js",
+    "next-env.d.ts"
+  ]
 }
