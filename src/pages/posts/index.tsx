@@ -2,19 +2,8 @@ import React from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { withTheme } from 'emotion-theming';
-import {
-  Heading,
-  Tag,
-  Link as ChakraLink,
-  Box,
-  Image,
-  Text,
-  Grid,
-  Flex,
-} from '@chakra-ui/core';
+import { Heading, Tag, Box, Image, Text, Grid, Flex } from '@chakra-ui/core';
 import Moment from 'react-moment';
-
-import fetch from 'isomorphic-unfetch';
 
 import HeadComponent from '../../components/templates/Head';
 import Layout from '../../components/templates/Layout';
@@ -42,66 +31,64 @@ const PostsPage: NextPage<Props> = ({ posts }) => {
         <Grid display={{ sm: 'grid' }} templateColumns="repeat(2, 1fr)" gap={4}>
           {posts.map(post => (
             <React.Fragment key={post.id}>
-              <Link href="/posts/[id]" as={`/posts/${post.id}`}>
-                <ChakraLink>
-                  <Box
-                    p={[2, 4, 4, 4]}
-                    width={['xs', 'sm', 'sm', 'sm']}
-                    maxHeight={'md'}
-                    rounded="lg"
-                    borderWidth="2px"
-                    margin={4}
-                  >
-                    <Flex direction="column">
-                      <Heading
-                        isTruncated
-                        as="h5"
-                        size="md"
-                        margin={2}
-                        fontWeight="bold"
-                        order={2}
-                      >
-                        {post.title}
-                      </Heading>
-                      <Image
-                        src={post.image.url}
-                        alt="ブログのイメージ画像です"
-                        rounded="lg"
-                        order={1}
-                      />
-                      <Flex order={3}>
-                        {post.tags.map(tag => (
-                          <React.Fragment key={tag.id}>
-                            <Tag
-                              variantColor="gray"
-                              color="gray.900"
-                              marginLeft={1}
-                            >
-                              {tag.name}
-                            </Tag>
-                          </React.Fragment>
-                        ))}
-                      </Flex>
-                      <Text as="i" margin={2} color="gray.600" order={4}>
-                        <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
-                      </Text>
-                      <Text
-                        color="gray.500"
-                        isTruncated
-                        lineHeight="tight"
-                        maxHeight="24"
-                        margin={2}
-                        order={5}
-                      >
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: `${post.content}`,
-                          }}
-                        ></div>
-                      </Text>
+              <Link href="/posts/[id]" as={`posts/${post.id}`}>
+                <Box
+                  p={[2, 4, 4, 4]}
+                  width={['xs', 'sm', 'sm', 'sm']}
+                  maxHeight={'md'}
+                  rounded="lg"
+                  borderWidth="2px"
+                  margin={4}
+                >
+                  <Flex direction="column">
+                    <Heading
+                      isTruncated
+                      as="h5"
+                      size="md"
+                      margin={2}
+                      fontWeight="bold"
+                      order={2}
+                    >
+                      {post.title}
+                    </Heading>
+                    <Image
+                      src={post.image.url}
+                      alt="ブログのイメージ画像です"
+                      rounded="lg"
+                      order={1}
+                    />
+                    <Flex order={3}>
+                      {post.tags.map(tag => (
+                        <React.Fragment key={tag.id}>
+                          <Tag
+                            variantColor="gray"
+                            color="gray.900"
+                            marginLeft={1}
+                          >
+                            {tag.name}
+                          </Tag>
+                        </React.Fragment>
+                      ))}
                     </Flex>
-                  </Box>
-                </ChakraLink>
+                    <Text as="i" margin={2} color="gray.600" order={4}>
+                      <Moment format="YYYY/MM/DD HH:mm">{post.day}</Moment>
+                    </Text>
+                    <Text
+                      color="gray.500"
+                      isTruncated
+                      lineHeight="tight"
+                      maxHeight="24"
+                      margin={2}
+                      order={5}
+                    >
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: `${post.content}`,
+                        }}
+                      ></div>
+                    </Text>
+                  </Flex>
+                </Box>
               </Link>
             </React.Fragment>
           ))}
@@ -120,7 +107,7 @@ export const getStaticProps: GetStaticProps = async () => {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'X-API-KEY': `${process.env.api_key}`,
+      'X-API-KEY': `${process.env.API_KEY}`,
     },
   });
 

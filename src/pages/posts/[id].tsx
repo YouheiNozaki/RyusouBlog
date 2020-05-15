@@ -6,7 +6,6 @@ import Highlight from 'react-highlight';
 import { withTheme } from 'emotion-theming';
 import { Heading, Tag, Image, Flex, Box, Text } from '@chakra-ui/core';
 
-import { http } from '../../lib/fetch';
 import { renderMarkdown } from '../../lib/renderMarkdown';
 import { markedOption, markedRender } from '../../lib/marked';
 import { Post } from '../../types/index';
@@ -71,44 +70,42 @@ const PostContent: React.FC<Props> = ({ post }) => {
 };
 
 export const getStaticPath: GetStaticPaths = async () => {
-  const response = await http<Post[]>(
-    new Request(MICROCMS_ENDPOINT + '/posts', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-API-KEY': `${process.env.api_key}`,
-      },
-    }),
+  const res = await fetch(`${MICROCMS_ENDPOINT}` + '/posts', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-API-KEY': `${process.env.API_KEY}`,
+    },
+  });
+  const posts = await res.json();
+
+  // Todo：anyを消す
+  const paths = posts.contents.map(
+    (post: { id: string }) => `posts/${post.id}`,
   );
-
-  const paths = response.map(post => `/posts/${post.id}`);
-
-  return { paths, fallback: false };
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
 export const getStaticProps: GetStaticProps = async context => {
-  if (!context.params) {
-    return { props: { errors: 'Ops no parameters was given' } };
-  }
-  try {
-    const id = context.params.id;
-    const res = await http<any>(
-      new Request(MICROCMS_ENDPOINT + '/posts/' + id, {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-API-KEY': `${process.env.api_key}`,
-        },
-      }),
-    );
-    const post = await res.json();
-    return {
-      props: {
-        post,
-      },
-    };
-  } catch (err) {
-    return { props: { errors: err.message } };
-  }
+  const id = context?.params?.id;
+
+  const res = await fetch(`${MICROCMS_ENDPOINT}` + '/posts/' + id, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-API-KEY': `${process.env.API_KEY}`,
+    },
+  });
+  const post = await res.json();
+
+  return {
+    props: {
+      post: post,
+    },
+  };
 };
 
 export default withTheme(PostContent);
